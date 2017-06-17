@@ -1,0 +1,10 @@
+C:\Users\Julián\Documents\ArqBaseLppa\bin\Lppa.UI.Process.dll
+C:\Users\Julián\Documents\ArqBaseLppa\bin\Lppa.UI.Process.pdb
+C:\Users\Julián\Documents\ArqBaseLppa\Presentation\Lppa.UI.Process\obj\Debug\Lppa.UI.Process.csprojResolveAssemblyReference.cache
+C:\Users\Julián\Documents\ArqBaseLppa\Presentation\Lppa.UI.Process\obj\Debug\Lppa.UI.Process.dll
+C:\Users\Julián\Documents\ArqBaseLppa\Presentation\Lppa.UI.Process\obj\Debug\Lppa.UI.Process.pdb
+C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\bin\Lppa.UI.Process.dll
+C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\bin\Lppa.UI.Process.pdb
+C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\Presentation\Lppa.UI.Process\obj\Debug\Lppa.UI.Process.csprojResolveAssemblyReference.cache
+C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\Presentation\Lppa.UI.Process\obj\Debug\Lppa.UI.Process.dll
+C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\Presentation\Lppa.UI.Process\obj\Debug\Lppa.UI.Process.pdb
