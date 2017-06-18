@@ -28,5 +28,11 @@ namespace Lppa.Data
             cx.Entry(user).State = System.Data.Entity.EntityState.Modified;
             cx.SaveChanges();
         }
+
+        public void Delete(Usuario user)
+        {
+            cx.Entry(user).State = System.Data.Entity.EntityState.Deleted;
+            cx.SaveChanges();
+        }
     }
 }

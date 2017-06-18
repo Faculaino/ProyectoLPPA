@@ -16,3 +16,9 @@ C:\Users\facun\Desktop\BaseLPPA\bin\Lppa.Data.pdb
 C:\Users\facun\Desktop\BaseLPPA\Data\Lppa.Data\obj\Debug\Lppa.Data.csprojResolveAssemblyReference.cache
 C:\Users\facun\Desktop\BaseLPPA\Data\Lppa.Data\obj\Debug\Lppa.Data.dll
 C:\Users\facun\Desktop\BaseLPPA\Data\Lppa.Data\obj\Debug\Lppa.Data.pdb
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\obj\Debug\Lppa.Data.csprojResolveAssemblyReference.cache
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\obj\Debug\Lppa.Data.dll
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\obj\Debug\Lppa.Data.pdb
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\bin\Lppa.Data.dll.config
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\bin\Lppa.Data.dll
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\bin\Lppa.Data.pdb

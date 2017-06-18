@@ -13,53 +13,26 @@ namespace Lppa.Entities
     [DataContract]
     public class Usuario : EntityBase
     {
-        public Usuario()
-        {
-            
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Cuil { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Dni { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
+        public string CUIL { get; set; }
+        
+        public string DNI { get; set; }
+       
         public string Domicilio { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
+        
         public string EstadoCivil { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
+        
         public DateTime FechaNacimiento { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public double IngresoMensual { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
+       
+        public double Ingreso { get; set; }
+        
         public string Nacionalidad { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
+        
         public string Sexo { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
+        
         public string SituacionLaboral { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
+        
         public string Nombre { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
+       
         public string Apellido { get; set; }
     }
 }

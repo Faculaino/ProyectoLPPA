@@ -1,48 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="LppaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Proyecto">
+  <EntityContainer Name="LppaContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Banco" EntityType="LppaModel.Banco" />
+    <EntitySet Name="Usuario" EntityType="LppaModel.Usuario" />
+  </EntityContainer>
+  <EntityType Name="Banco">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Codigo" Type="Int32" Nullable="false" />
-    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="RowId" Type="Guid" Nullable="false" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="CreatedBy" Type="Guid" />
-    <Property Name="ChangedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ChangedBy" Type="Guid" />
-    <Property Name="DeletedOn" Type="DateTime" Precision="7" />
-    <Property Name="DeletedBy" Type="Guid" />
-    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Usuario">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Dni" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Cuil" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Domicilio" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="RowId" Type="Guid" Nullable="false" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="CreatedBy" Type="Guid" />
-    <Property Name="ChangedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ChangedBy" Type="Guid" />
-    <Property Name="DeletedOn" Type="DateTime" Precision="7" />
-    <Property Name="DeletedBy" Type="Guid" />
-    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-    <Property Name="EstadoCivil" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="IngresoMensual" Type="Double" Nullable="false" />
-    <Property Name="Nacionalidad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Sexo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="SituacionLaboral" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CUIL" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="DNI" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Domicilio" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoCivil" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Ingreso" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Nacionalidad" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Sexo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SituacionLaboral" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityContainer Name="LppaContext" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Proyecto" EntityType="Self.Proyecto" />
-    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-  </EntityContainer>
 </Schema>

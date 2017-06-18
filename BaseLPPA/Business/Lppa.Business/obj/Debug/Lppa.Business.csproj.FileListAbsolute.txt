@@ -8,3 +8,8 @@ C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\bin\Lppa.Business.pdb
 C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\Business\Lppa.Business\obj\Debug\Lppa.Business.csprojResolveAssemblyReference.cache
 C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\Business\Lppa.Business\obj\Debug\Lppa.Business.dll
 C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\Business\Lppa.Business\obj\Debug\Lppa.Business.pdb
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Business\Lppa.Business\obj\Debug\Lppa.Business.csprojResolveAssemblyReference.cache
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Business\Lppa.Business\obj\Debug\Lppa.Business.dll
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Business\Lppa.Business\obj\Debug\Lppa.Business.pdb
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\bin\Lppa.Business.dll
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\bin\Lppa.Business.pdb

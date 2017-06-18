@@ -39,9 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banco.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proyecto.cs" />
+    <Compile Include="Solicitud.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>

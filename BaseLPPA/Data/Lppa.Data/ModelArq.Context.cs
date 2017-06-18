@@ -26,7 +26,7 @@ namespace Lppa.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Proyecto> Proyecto { get; set; }
+        public virtual DbSet<Banco> Banco { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
     }
 }
