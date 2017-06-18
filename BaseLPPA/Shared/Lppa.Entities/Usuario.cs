@@ -34,5 +34,10 @@ namespace Lppa.Entities
         public string Nombre { get; set; }
        
         public string Apellido { get; set; }
+
+        public void Select()
+        {
+           
+        }
     }
 }

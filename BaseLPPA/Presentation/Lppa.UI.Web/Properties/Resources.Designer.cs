@@ -63,9 +63,29 @@ namespace Lppa.UI.Web.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImageTarjeta {
+            get {
+                object obj = ResourceManager.GetObject("ImageTarjeta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_GP_Baires {
             get {
                 object obj = ResourceManager.GetObject("Logo_GP_Baires", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NuevaTarjeta {
+            get {
+                object obj = ResourceManager.GetObject("NuevaTarjeta", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

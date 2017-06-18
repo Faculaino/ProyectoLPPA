@@ -20,7 +20,8 @@ namespace Lppa.Data
 
         public List<Usuario> Select()
         {
-            return cx.Usuario.ToList();           
+            return cx.Usuario.ToList();
+           
         }
 
         public void Edit(Usuario user)
