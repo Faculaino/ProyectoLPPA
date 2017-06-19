@@ -30,12 +30,12 @@ namespace Lppa.UI.Web.Models
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "Nueva Contraseña")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "Confirme Nueva Contraseña")]
+        [Compare("NewPassword", ErrorMessage = "La contraseña y su confirmación no coinciden.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -49,12 +49,12 @@ namespace Lppa.UI.Web.Models
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "Nueva Contraseña")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "Confirme Nueva Contraseña")]
+        [Compare("NewPassword", ErrorMessage = "La contraseña y su confirmación no coinciden.")]
         public string ConfirmPassword { get; set; }
     }
 
