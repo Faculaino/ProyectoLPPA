@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 using Lppa.Entities;
 using Lppa.Data;
 
-
 namespace Lppa.Business
 {
     /// <summary>
@@ -89,19 +88,19 @@ namespace Lppa.Business
         /// 
         /// </summary>
         /// <param name="user"></param>
-        public void AgregarUsuario(Usuario user)
+        public void AgregarCliente(ClienteEntity cliente)
         {
             //Validar datos del negocio
-            var us = new UsuarioDAC();
-            us.Create(user);
+            var us = new ClienteRepository();
+            us.Create(cliente);
 
         }
 
-        public List<Usuario> Seleccionar()
+        public List<ClienteEntity> Seleccionar()
         {
             //Validar datos del negocio
-            var us = new UsuarioDAC();
-            return us.Select();
+            var us = new ClienteRepository();
+            return us.ListarTodos();
 
         }
     }

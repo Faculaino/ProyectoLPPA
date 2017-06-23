@@ -10,16 +10,16 @@ namespace Lppa.UI.Process
 {
     public class UsuarioComponentController
     {
-        public void AgregarUnUsuario(Usuario user)
-        {
-            var bc = new GestorBusinessComponent();
-            bc.AgregarUsuario(user);
-        }
+        //public void AgregarUnUsuario(Usuario user)
+        //{
+        //    var bc = new GestorBusinessComponent();
+        //    bc.AgregarUsuario(user);
+        //}
 
-        public List<Usuario> SeleccionarUsuarios()
-        {
-            var bc = new GestorBusinessComponent();
-            return bc.Seleccionar();
-        }
+        //public List<Usuario> SeleccionarUsuarios()
+        //{
+        //    var bc = new GestorBusinessComponent();
+        //    return bc.Seleccionar();
+        //}
     }
 }

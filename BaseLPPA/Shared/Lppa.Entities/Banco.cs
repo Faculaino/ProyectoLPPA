@@ -9,5 +9,6 @@ namespace Lppa.Entities
     public class Banco : EntityBase
     {
         public string Nombre { get; set; }
+        public string Direccion { get; set; }
     }
 }

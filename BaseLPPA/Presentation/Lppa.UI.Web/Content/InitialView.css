@@ -51,5 +51,6 @@ h2.NuevoCliente{
     margin-top:60px;
 }
 
-/*#col1 { margin-left: -554px; height: 58px; width: 154px;} 
-#col2 { height: 45px; width: 600px; }*/
+.panel-success > .panel-heading {
+    color:cornflowerblue;
+}

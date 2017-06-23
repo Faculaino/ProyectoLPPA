@@ -10,6 +10,5 @@ C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\Shared\Lppa.Entities\obj\Debug\Lppa.En
 C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\Shared\Lppa.Entities\obj\Debug\Lppa.Entities.pdb
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\bin\Lppa.Entities.dll
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\bin\Lppa.Entities.pdb
-C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Shared\Lppa.Entities\obj\Debug\Lppa.Entities.csprojResolveAssemblyReference.cache
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Shared\Lppa.Entities\obj\Debug\Lppa.Entities.dll
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Shared\Lppa.Entities\obj\Debug\Lppa.Entities.pdb

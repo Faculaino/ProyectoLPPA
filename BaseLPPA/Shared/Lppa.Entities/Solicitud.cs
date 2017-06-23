@@ -9,7 +9,7 @@ namespace Lppa.Entities
     public class Solicitud : EntityBase
     {
         public DateTime Fecha { get; set; }
-        public Usuario Cliente { get; set; }
+        public ClienteEntity Cliente { get; set; }
 
     }
 }

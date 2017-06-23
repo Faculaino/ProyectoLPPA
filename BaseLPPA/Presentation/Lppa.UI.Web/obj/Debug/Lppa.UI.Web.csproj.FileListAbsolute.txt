@@ -232,6 +232,9 @@ C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\Presentation\Lppa.UI.Web\bin\Microsoft
 C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\Presentation\Lppa.UI.Web\obj\Debug\Lppa.UI.Web.csprojResolveAssemblyReference.cache
 C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\Presentation\Lppa.UI.Web\obj\Debug\Lppa.UI.Web.dll
 C:\Users\Julián\Desktop\LPPA\08\BaseLPPA\Presentation\Lppa.UI.Web\obj\Debug\Lppa.UI.Web.pdb
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\obj\Debug\Lppa.UI.Web.csprojResolveAssemblyReference.cache
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\obj\Debug\Lppa.UI.Web.Properties.Resources.resources
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\obj\Debug\Lppa.UI.Web.csproj.GenerateResource.Cache
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\roslyn\csc.exe
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\roslyn\csc.exe.config
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\roslyn\csc.rsp
@@ -286,6 +289,7 @@ C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Lppa.UI.W
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Antlr3.Runtime.dll
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\EntityFramework.dll
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Lppa.Data.dll
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Lppa.Entities.dll
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Lppa.UI.Process.dll
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Microsoft.AspNet.Identity.Core.dll
@@ -313,6 +317,7 @@ C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\System.We
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\System.Web.WebPages.Razor.dll
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\WebGrease.dll
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Lppa.Business.dll
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Lppa.Data.pdb
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Lppa.Entities.pdb
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Lppa.UI.Process.pdb
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Antlr3.Runtime.pdb
@@ -340,14 +345,5 @@ C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Microsoft
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Lppa.Business.pdb
-C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\obj\Debug\Lppa.UI.Web.csprojResolveAssemblyReference.cache
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\obj\Debug\Lppa.UI.Web.dll
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\obj\Debug\Lppa.UI.Web.pdb
-C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\obj\Debug\Lppa.UI.Web.Properties.Resources.resources
-C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\obj\Debug\Lppa.UI.Web.csproj.GenerateResource.Cache
-C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Lppa.Data.dll
-C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
-C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
-C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Lppa.Data.pdb
-C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
-C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
