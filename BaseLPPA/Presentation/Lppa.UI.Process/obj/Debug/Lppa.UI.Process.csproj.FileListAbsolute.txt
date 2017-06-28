@@ -13,3 +13,8 @@ C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\bin\Lppa.UI.Process.dll
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\bin\Lppa.UI.Process.pdb
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Process\obj\Debug\Lppa.UI.Process.dll
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Process\obj\Debug\Lppa.UI.Process.pdb
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\bin\Lppa.UI.Process.dll
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\bin\Lppa.UI.Process.pdb
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Process\obj\Debug\Lppa.UI.Process.csprojResolveAssemblyReference.cache
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Process\obj\Debug\Lppa.UI.Process.dll
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Process\obj\Debug\Lppa.UI.Process.pdb

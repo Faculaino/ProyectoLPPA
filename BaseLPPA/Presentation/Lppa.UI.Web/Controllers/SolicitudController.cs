@@ -28,7 +28,7 @@ namespace Lppa.UI.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Solicitud solicitud = db.Solicituds.Find(id);
+            SolicitudEntity solicitud = db.Solicituds.Find(id);
             if (solicitud == null)
             {
                 return HttpNotFound();
@@ -47,7 +47,7 @@ namespace Lppa.UI.Web.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Fecha,RowId,CreatedOn,CreatedBy,ChangedOn,ChangedBy,DeletedOn,DeletedBy,IsDeleted")] Solicitud solicitud)
+        public ActionResult Create([Bind(Include = "Id,Fecha,RowId,CreatedOn,CreatedBy,ChangedOn,ChangedBy,DeletedOn,DeletedBy,IsDeleted")] SolicitudEntity solicitud)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace Lppa.UI.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Solicitud solicitud = db.Solicituds.Find(id);
+            SolicitudEntity solicitud = db.Solicituds.Find(id);
             if (solicitud == null)
             {
                 return HttpNotFound();
@@ -79,7 +79,7 @@ namespace Lppa.UI.Web.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Fecha,RowId,CreatedOn,CreatedBy,ChangedOn,ChangedBy,DeletedOn,DeletedBy,IsDeleted")] Solicitud solicitud)
+        public ActionResult Edit([Bind(Include = "Id,Fecha,RowId,CreatedOn,CreatedBy,ChangedOn,ChangedBy,DeletedOn,DeletedBy,IsDeleted")] SolicitudEntity solicitud)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +97,7 @@ namespace Lppa.UI.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Solicitud solicitud = db.Solicituds.Find(id);
+            SolicitudEntity solicitud = db.Solicituds.Find(id);
             if (solicitud == null)
             {
                 return HttpNotFound();
@@ -110,7 +110,7 @@ namespace Lppa.UI.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Solicitud solicitud = db.Solicituds.Find(id);
+            SolicitudEntity solicitud = db.Solicituds.Find(id);
             db.Solicituds.Remove(solicitud);
             db.SaveChanges();
             return RedirectToAction("Index");

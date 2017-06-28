@@ -10,15 +10,15 @@ namespace Lppa.Entities
     {
         public int CodCliente { get; set; }
         public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        public String Apellido { get; set; }
         public int TipoDoc { get; set; }
         public long NroDoc { get; set; }
-        public string Domicilio { get; set; }
+        public String Domicilio { get; set; }
         public int EstadoCivil { get; set; }
         public decimal Ingreso { get; set; }
-        public string Nacionalidad { get; set; }
-        public string Sexo { get; set; }
-        public string Ocupacion { get; set; }
+        public String Nacionalidad { get; set; }
+        public String Sexo { get; set; }
+        public String Ocupacion { get; set; }
         public int CodEstado { get; set; }
         public DateTime FechaAlta { get; set; }
         public DateTime FechaBaja { get; set; }

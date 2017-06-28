@@ -16,10 +16,10 @@ namespace Lppa.UI.Process
             bc.AgregarCliente(cliente);
         }
 
-        public List<ClienteEntity> SeleccionarUsuarios()
+        public List<ClienteEntity> SeleccionarCliente()
         {
             var bc = new GestorBusinessComponent();
-            return bc.Seleccionar();
+            return bc.SeleccionarCliente();
         }
     }
 }

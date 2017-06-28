@@ -51,9 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BancoRepository.cs" />
     <Compile Include="ClienteRepository.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SistemaBancarioRepository.cs" />
+    <Compile Include="VerazRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

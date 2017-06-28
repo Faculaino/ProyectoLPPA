@@ -96,12 +96,41 @@ namespace Lppa.Business
 
         }
 
-        public List<ClienteEntity> Seleccionar()
+        public List<ClienteEntity> SeleccionarCliente()
         {
             //Validar datos del negocio
             var us = new ClienteRepository();
             return us.ListarTodos();
 
         }
+        public void AgregarBanco(BancoEntity banco)
+        {
+            //Validar datos del negocio
+            var us = new BancoRepository();
+            us.Create(banco);
+
+        }
+
+        public List<BancoEntity> SeleccionarBanco()
+        {
+            //Validar datos del negocio
+            var us = new BancoRepository();
+            return us.ListarTodos();
+        }
+
+        public int ValidarVeraz(long NroDoc)
+        {
+            var us = new VerazRepository();
+            return us.ValidarVeraz(NroDoc);
+
+        }
+
+        public int ValidarSistemaBancario (long NroDoc)
+        {
+            var us = new SistemaBancarioRepository();
+            return us.ValidarSistemaBancario(NroDoc);
+
+        }
+
     }
 }

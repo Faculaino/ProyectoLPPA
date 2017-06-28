@@ -30,6 +30,6 @@ namespace Lppa.UI.Web.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Lppa.Entities.Solicitud> Solicituds { get; set; }
+        public System.Data.Entity.DbSet<Lppa.Entities.SolicitudEntity> Solicituds { get; set; }
     }
 }

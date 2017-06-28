@@ -10,3 +10,15 @@ C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\bin\Debug\EntityFramewo
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\obj\Debug\Lppa.Data.csprojResolveAssemblyReference.cache
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\obj\Debug\Lppa.Data.dll
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\obj\Debug\Lppa.Data.pdb
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\bin\Debug\Lppa.Data.dll.config
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\bin\Debug\Lppa.Data.dll
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\bin\Debug\Lppa.Data.pdb
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\bin\Debug\EntityFramework.dll
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\bin\Debug\Lppa.Entities.dll
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\bin\Debug\Lppa.Entities.pdb
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\bin\Debug\EntityFramework.xml
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\obj\Debug\Lppa.Data.csprojResolveAssemblyReference.cache
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\obj\Debug\Lppa.Data.dll
+C:\Users\pablo\ProyectoLPPA\BaseLPPA\Data\Lppa.Data\obj\Debug\Lppa.Data.pdb
