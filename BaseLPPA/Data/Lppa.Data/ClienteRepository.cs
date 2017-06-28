@@ -13,6 +13,7 @@ namespace Lppa.Data
 
         public void Create(ClienteEntity cliente)
         {
+            cliente.CodCliente = int.Parse(Guid.NewGuid().ToString());
             cliente.ChangedBy = Guid.NewGuid();
             cliente.ChangedOn = DateTime.Now;
             cliente.CreatedBy = Guid.NewGuid();
@@ -30,7 +31,7 @@ namespace Lppa.Data
 
         public List<ClienteEntity> ListarTodos()
         {
-            return db.TablaCliente.ToList();
+           return db.TablaCliente.ToList();
         }
     }
 }

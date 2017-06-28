@@ -22,6 +22,16 @@
         // sobre cómo configurar y usar un modelo Code First, vea http://go.microsoft.com/fwlink/?LinkId=390109.
 
         public  DbSet<ClienteEntity> TablaCliente { get; set; }
+
+        public DbSet<TarjetaEntity> TablaTarjeta { get; set; }
+
+        public DbSet<BancoEntity> TablaBanco { get; set; }
+
+        public DbSet<VerazEntity> TablaVeraz { get; set; }
+
+        public DbSet<SolicitudEntity> TablaSolicitud { get; set; }
+
+        public DbSet<SistemaBancarioEntity> TablaSistemaBancario { get; set; }
     }
 
     //public class MyEntity
