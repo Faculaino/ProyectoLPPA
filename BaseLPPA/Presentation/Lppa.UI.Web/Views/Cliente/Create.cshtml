@@ -4,123 +4,142 @@
     ViewBag.Title = "Nuevo Cliente";
 }
 
-<h2 class="NuevoCliente">Nuevo Cliente</h2>
-<div id="pantalla">
+
+<html>
+<head>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+</head>
 
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
 
-        <div class="form-horizontal">
-            <h4>Ingresar Datos del Cliente</h4>
-            <hr />
-            <div class="col-md-6">
-                <div class="panel panel-success">
-                    <div class="panel-heading panel-title">Datos Personales</div>
-                    <div class="panel-body">
-                        <div class="form-group col-md-6">
-                            @Html.LabelFor(m => m.Nombre)
-                            @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control required" })
-                        </div>
-                        <div class="form-group col-md-6">
-                            @Html.LabelFor(m => m.Apellido)
-                            @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control required" })
-                        </div>
-                        <div class="form-group col-md-6">
-                            @Html.LabelFor(m => m.DNI)
-                            @Html.TextBoxFor(m => m.DNI, new { @class = "form-control digits required" })
-                        </div>
-                        <div class="form-group col-md-6">
-                            @{
-                                var estadoCivil = new List<SelectListItem>()
+
+
+<body>
+    <h2 class="NuevoCliente">Nuevo Cliente</h2>
+
+
+    <div id="pantalla">
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Ingresar Datos del Cliente</h4>
+                <hr />
+                <div class="col-md-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading panel-title">Datos Personales</div>
+                        <div class="panel-body">
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(m => m.Nombre)
+                                @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control required" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(m => m.Apellido)
+                                @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control required" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(m => m.DNI)
+                                @Html.TextBoxFor(m => m.DNI, new { @class = "form-control digits required" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                @{
+                                    var estadoCivil = new List<SelectListItem>()
                             {
                                 new SelectListItem() {Text = "Soltero", Value = "Soltero"},
                                 new SelectListItem() {Text = "Casado", Value = "Casado"}
                             };
-                            }
-                            @Html.LabelFor(m => m.EstadoCivil)
-                            @Html.DropDownListFor(m => m.EstadoCivil, estadoCivil, new { @class = "form-control" })
-                        </div>
-                        <div class="form-group col-md-6">
-                            @{
-                                var sexo = new List<SelectListItem>()
+                                }
+                                @Html.LabelFor(m => m.EstadoCivil)
+                                @Html.DropDownListFor(m => m.EstadoCivil, estadoCivil, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                @{
+                                    var sexo = new List<SelectListItem>()
                             {
                                 new SelectListItem() {Text = "Masculino", Value = "Masculino"},
                                 new SelectListItem() {Text = "Femenino", Value = "Femenino"}
                             };
-                            }
-                            @Html.LabelFor(m => m.Sexo)
-                            @Html.DropDownListFor(m => m.Sexo, sexo, new { @class = "form-control required" })
-                        </div>
-                        @*<div class="form-group col-md-6">
-                                @Html.LabelFor(m => m.FechaNacimiento)
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
+                                }
+                                @Html.LabelFor(m => m.Sexo)
+                                @Html.DropDownListFor(m => m.Sexo, sexo, new { @class = "form-control required" })
+                            </div>
+                            @*<div class="form-group col-md-6">
+                                    @Html.LabelFor(m => m.FechaNacimiento)
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
 
-                                </div>
-                            </div>*@
-                        <div class="form-group col-md-6">
-                            @Html.LabelFor(m => m.FechaNacimiento)
-                            @Html.TextBoxFor(m => m.FechaNacimiento, new { @class = "form-control required" })
+                                    </div>
+                                </div>*@
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(m => m.FechaNacimiento)
+                                @Html.TextBoxFor(m => m.FechaNacimiento, new { @class = "form-control required" })
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-6">
-                <div class="panel panel-success">
-                    <div class="panel-heading panel-title">Información Adicional</div>
-                    <div class="panel-body">
+                <div class="col-md-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading panel-title">Información Adicional</div>
+                        <div class="panel-body">
 
-                        <div class="form-group col-md-6">
-                            @{
-                                var opcionesOcupacion = new List<SelectListItem>(){
+                            <div class="form-group col-md-6">
+                                @{
+                                    var opcionesOcupacion = new List<SelectListItem>(){
                                 new SelectListItem(){ Text = "Rel. Dependencia", Value = "Relación Dependencia" },
                                 new SelectListItem(){ Text = "Monotributista", Value = "Monotributista" },
 
                             };
-                            }
-                            @Html.LabelFor(m => m.Ocupacion)
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-education"></span>
-                                </span>
-                                @Html.DropDownListFor(m => m.Ocupacion, opcionesOcupacion, new { @class = "form-control required" })
+                                }
+                                @Html.LabelFor(m => m.Ocupacion)
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-education"></span>
+                                    </span>
+                                    @Html.DropDownListFor(m => m.Ocupacion, opcionesOcupacion, new { @class = "form-control required" })
+                                </div>
                             </div>
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(m => m.Ingreso)
+                                @Html.TextBoxFor(m => m.Ingreso, new { @class = "form-control required" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(m => m.Domicilio)
+                                @Html.TextBoxFor(m => m.Domicilio, new { @class = "form-control required" })
+                            </div>
+
                         </div>
-                        <div class="form-group col-md-6">
-                            @Html.LabelFor(m => m.Ingreso)
-                            @Html.TextBoxFor(m => m.Ingreso, new { @class = "form-control required" })
-                        </div>
-                        <div class="form-group col-md-6">
-                            @Html.LabelFor(m => m.Domicilio)
-                            @Html.TextBoxFor(m => m.Domicilio, new { @class = "form-control required" })
-                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-10 col-md-10">
+                        <input type="submit" value="Siguiente" id="btnSiguiente" class="btn btn-default" />
 
                     </div>
                 </div>
             </div>
+                                    }
 
-            <div class="form-group">
-                <div class="col-md-offset-10 col-md-10">
-                    <input type="submit" value="Siguiente" id="btnSiguiente" class="btn btn-default" />
-                    <script>
-                        $(document).ready(function () {
-                            var contenido = $("#pantalla");
-                            $("#btnSiguiente").click(function(){
-                                contenido.slideUp();
-                            });
-                        });
-                    </script>
-                </div>
-            </div>
-        </div>
-                                }
+        <button>
+            @Html.ActionLink("Ver Lista", "Index")
+        </button>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#btnSiguiente").click(function () {
+                $("#pantalla").slideUp();
+            });
+        });
 
-    <button>
-        @Html.ActionLink("Ver Lista", "Index")
-    </button>
-</div>
+    </script>
+</body>
+
+</html>

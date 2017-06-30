@@ -6,112 +6,111 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Lppa.Entities;
-using Lppa.UI.Web.Models;
+using Lppa.Data;
 
 namespace Lppa.UI.Web.Controllers
 {
-    public class SolicitudController : Controller
+    public class ContratoController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private LppaBD db = new LppaBD();
 
-        // GET: Solicitud
+        // GET: Contrato
         public ActionResult Index()
         {
-            return View(db.Solicituds.ToList());
+            return View(db.Contrato.ToList());
         }
 
-        // GET: Solicitud/Details/5
+        // GET: Contrato/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SolicitudEntity solicitud = db.Solicituds.Find(id);
-            if (solicitud == null)
+            Contrato contrato = db.Contrato.Find(id);
+            if (contrato == null)
             {
                 return HttpNotFound();
             }
-            return View(solicitud);
+            return View(contrato);
         }
 
-        // GET: Solicitud/Create
+        // GET: Contrato/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Solicitud/Create
+        // POST: Contrato/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Fecha,RowId,CreatedOn,CreatedBy,ChangedOn,ChangedBy,DeletedOn,DeletedBy,IsDeleted")] SolicitudEntity solicitud)
+        public ActionResult Create([Bind(Include = "ID,FechaAlta,FechaBaja,IDCliente,IDTarjeta,IDUsuario,CodEstado,CreatedBy,CreatedOn,ChangedBy,ChangedOn")] Contrato contrato)
         {
             if (ModelState.IsValid)
             {
-                db.Solicituds.Add(solicitud);
+                db.Contrato.Add(contrato);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(solicitud);
+            return View(contrato);
         }
 
-        // GET: Solicitud/Edit/5
+        // GET: Contrato/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SolicitudEntity solicitud = db.Solicituds.Find(id);
-            if (solicitud == null)
+            Contrato contrato = db.Contrato.Find(id);
+            if (contrato == null)
             {
                 return HttpNotFound();
             }
-            return View(solicitud);
+            return View(contrato);
         }
 
-        // POST: Solicitud/Edit/5
+        // POST: Contrato/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Fecha,RowId,CreatedOn,CreatedBy,ChangedOn,ChangedBy,DeletedOn,DeletedBy,IsDeleted")] SolicitudEntity solicitud)
+        public ActionResult Edit([Bind(Include = "ID,FechaAlta,FechaBaja,IDCliente,IDTarjeta,IDUsuario,CodEstado,CreatedBy,CreatedOn,ChangedBy,ChangedOn")] Contrato contrato)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(solicitud).State = EntityState.Modified;
+                db.Entry(contrato).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(solicitud);
+            return View(contrato);
         }
 
-        // GET: Solicitud/Delete/5
+        // GET: Contrato/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SolicitudEntity solicitud = db.Solicituds.Find(id);
-            if (solicitud == null)
+            Contrato contrato = db.Contrato.Find(id);
+            if (contrato == null)
             {
                 return HttpNotFound();
             }
-            return View(solicitud);
+            return View(contrato);
         }
 
-        // POST: Solicitud/Delete/5
+        // POST: Contrato/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            SolicitudEntity solicitud = db.Solicituds.Find(id);
-            db.Solicituds.Remove(solicitud);
+            Contrato contrato = db.Contrato.Find(id);
+            db.Contrato.Remove(contrato);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
