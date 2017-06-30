@@ -1,117 +1,115 @@
-﻿@*@using.Entities;*@
-@model Lppa.UI.Web.ViewModels.ClienteViewModel
+﻿@model Lppa.Data.Cliente
 
 @{
     ViewBag.Title = "Nuevo Cliente";
 }
 
 <h2 class="NuevoCliente">Nuevo Cliente</h2>
-    
-<div class="NuevoCliente">
-    @*@using (Html.BeginForm("Create", "Cliente", FormMethod.Post, new { @class = "form" }))*@
-    
+
+    @using (Html.BeginForm()) 
+    {
         @Html.AntiForgeryToken()
-        <div class="col-md-12">
-            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-success">
-                <div class="panel-heading panel-title">Información Básica</div>
-                <div class="panel-body">
-
-                    <div class="form-group col-md-6">
-                        @Html.LabelFor(m => m.Nombre)
-                        @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control required", placeholder = "Ej. Rubén" })
-                    </div>
-                    <div class="form-group col-md-6">
-                        @Html.LabelFor(m => m.Apellido)
-                        @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control required", placeholder = "Ej. Martínez" })
-                    </div>
-                    <div class="form-group col-md-6">
-                        @{
-                            var TipoDocumento = new List<SelectListItem>()
-                            {
-                                new SelectListItem() {Text = "DNI", Value = "1"},
-                                new SelectListItem() {Text = "Libreta Enrolamiento", Value = "2"}
-                            };
-                        }
-                        @Html.LabelFor(m => m.TipoDoc)
-                        @Html.DropDownListFor(m => m.Sexo, TipoDocumento, new { @class = "form-control required" })
-                    </div>
-                    <div class="form-group col-md-6">
-                        @Html.LabelFor(m => m.DNI)
-                        @Html.TextBoxFor(m => m.DNI, new { @class = "form-control digits required", placeholder = "Ej. 39722600" })
-                    </div>
-
-                    @*<p><input id="btnValidar" class="btn btn-primary btn-lg" name="btnValidar">Validar></p>*@
-
-                    @{ 
-                        //var validadorVeraz = new VerazEntity();
-                        
-                    }
-
-
-                    <div class="form-group col-md-6">
-                        @{
-                            var sexo = new List<SelectListItem>()
-                            {
-                                new SelectListItem() {Text = "Masculino", Value = "Masculino"},
-                                new SelectListItem() {Text = "Femenino", Value = "Femenino"}
-                            };
-                        }
-                        @Html.LabelFor(m => m.Sexo)
-                        @Html.DropDownListFor(m => m.Sexo, sexo, new { @class = "form-control required" })
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="panel panel-success">
-                <div class="panel-heading panel-title">Información Adicional</div>
-                <div class="panel-body">
-                    <div class="form-group col-md-6">
-                        @{
-                            var estadoCivil = new List<SelectListItem>()
+        
+        <div class="form-horizontal">
+            <h4>Ingresar Datos del Cliente</h4>
+            <hr />
+            <div class="col-md-6">
+                <div class="panel panel-success">
+                    <div class="panel-heading panel-title">Datos Personales</div>
+                    <div class="panel-body">
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Nombre)
+                            @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control required" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Apellido)
+                            @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control required" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.DNI)
+                            @Html.TextBoxFor(m => m.DNI, new { @class = "form-control digits required" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            @{
+                                var estadoCivil = new List<SelectListItem>()
                             {
                                 new SelectListItem() {Text = "Soltero", Value = "Soltero"},
                                 new SelectListItem() {Text = "Casado", Value = "Casado"}
                             };
-                        }
-                        @Html.LabelFor(m => m.EstadoCivil)
-                        @Html.DropDownListFor(m => m.EstadoCivil, estadoCivil, new { @class = "form-control" })
+                            }
+                            @Html.LabelFor(m => m.EstadoCivil)
+                            @Html.DropDownListFor(m => m.EstadoCivil, estadoCivil, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            @{
+                                var sexo = new List<SelectListItem>()
+                            {
+                                new SelectListItem() {Text = "Masculino", Value = "Masculino"},
+                                new SelectListItem() {Text = "Femenino", Value = "Femenino"}
+                            };
+                            }
+                            @Html.LabelFor(m => m.Sexo)
+                            @Html.DropDownListFor(m => m.Sexo, sexo, new { @class = "form-control required" })
+                        </div>
+                        @*<div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.FechaNacimiento)
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                                
+                            </div>
+                        </div>*@
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.FechaNacimiento)
+                            @Html.TextBoxFor(m => m.FechaNacimiento, new { @class = "form-control required" })
+                        </div>
                     </div>
-                    <div class="form-group col-md-6">
-                        @{
-                                var ocupacion = new List<SelectListItem>(){
-                                new SelectListItem(){ Text = "Relacion de Dependencia", Value = "Relacion de Dependencia" },
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="panel panel-success">
+                    <div class="panel-heading panel-title">Información Adicional</div>
+                    <div class="panel-body">
+
+                        <div class="form-group col-md-6">
+                            @{
+                                var opcionesOcupacion = new List<SelectListItem>(){
+                                new SelectListItem(){ Text = "Rel. Dependencia", Value = "Relación Dependencia" },
                                 new SelectListItem(){ Text = "Monotributista", Value = "Monotributista" },
 
                             };
                             }
                             @Html.LabelFor(m => m.Ocupacion)
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-lock"></span>
-                            </span>
-                            @Html.DropDownListFor(m => m.Ocupacion, ocupacion, new { @class = "form-control required" })
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-education"></span>
+                                </span>
+                                @Html.DropDownListFor(m => m.Ocupacion, opcionesOcupacion, new { @class = "form-control required" })
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group col-md-12">
-                        @Html.LabelFor(m => m.CUIL)
-                        @Html.TextBoxFor(m => m.CUIL, new { @class = "form-control required", placeholder = "Ej. 20397346999" })
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Ingreso)
+                            @Html.TextBoxFor(m => m.Ingreso, new { @class = "form-control required" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Domicilio)
+                            @Html.TextBoxFor(m => m.Domicilio, new { @class = "form-control required" })
+                        </div>
+                       
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-md-12">
-            <input type="submit" class="btn btn-primary pull-right" value="Aceptar" />
+            <div class="form-group">
+                <div class="col-md-offset-10 col-md-10">
+                    <input type="submit" value="Siguiente" class="btn btn-default" />
+                </div>
+            </div>
         </div>
-
-        <div style="clear:both;">
-            @*@Html.ActionLink("Ver Lista", "Index")*@
-            @Html.ActionLink("Siguiente", "Index", "Solicitud")
-        </div>
-    <</div>
+    }
+    
+    <button>
+        @Html.ActionLink("Ver Lista", "Index")
+    </button>

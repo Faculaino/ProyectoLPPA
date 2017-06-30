@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Lppa.Entities;
+using Lppa.Data;
 
 namespace Lppa.UI.Process
 {
-    class ClienteComponentController
+    public class ClienteComponentController
     {
         public void AgregarunCliente(ClienteEntity cliente)
         {

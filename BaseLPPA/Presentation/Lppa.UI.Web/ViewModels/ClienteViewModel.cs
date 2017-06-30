@@ -10,9 +10,7 @@ namespace Lppa.UI.Web.ViewModels
     {
         [Required]
         public int DNI { get; set; }
-        [Required]
-        public int TipoDoc { get; set; }
-
+       
         [Required]
         [StringLength(50, ErrorMessage = "El Nombre no puede tener mas de 50 caracteres")]
         public string Nombre { get; set; }
@@ -34,10 +32,9 @@ namespace Lppa.UI.Web.ViewModels
         public string EstadoCivil { get; set; }
 
         [Required]
-        [StringLength(11, ErrorMessage = "El CUIL no puede tener mas de 11 caracteres")]
-        public string CUIL { get; set; }
+        public string Ocupacion { get; set; }
 
         [Required]
-        public string Ocupacion { get; set; }
+        public decimal Ingreso { get; set; }
     }
 }

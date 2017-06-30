@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Data\Lppa.Data\Lppa.Data.csproj">
-      <Project>{a435dbbe-7308-4596-b5e5-86108445327c}</Project>
+      <Project>{008e781b-fe5c-4eb5-9b64-cd0ef8f5b7a8}</Project>
       <Name>Lppa.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Shared\Lppa.Entities\Lppa.Entities.csproj">

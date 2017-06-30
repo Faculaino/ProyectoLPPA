@@ -14,9 +14,9 @@ namespace Lppa.Entities
         /// <summary>
         /// 
         /// </summary>
-        [DataMember]
+        
         [Browsable(false)]
-        public int Id { get; set; }
+        public int ID { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// 
@@ -37,55 +37,17 @@ namespace Lppa.Entities
         }
 
         #region Implementing audit Pattern
-        
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [DataMember]
-        public Guid RowId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DataMember]
+     
         public DateTime CreatedOn { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DataMember]
-        public Guid CreatedBy { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DataMember]
+     
+        public string CreatedBy { get; set; }
+     
         public DateTime ChangedOn { get; set; }
+    
+        public string ChangedBy { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [DataMember]
-        public Guid ChangedBy { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DataMember]
-        public DateTime? DeletedOn { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DataMember]
-        public Guid DeletedBy { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [DataMember]
-        public bool IsDeleted { get; set; }
+      
         #endregion
 
     }

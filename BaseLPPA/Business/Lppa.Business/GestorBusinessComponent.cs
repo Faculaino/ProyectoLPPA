@@ -91,8 +91,8 @@ namespace Lppa.Business
         public void AgregarCliente(ClienteEntity cliente)
         {
             //Validar datos del negocio
-            var us = new ClienteRepository();
-            us.Create(cliente);
+            var cr = new Cliente();
+            cr.Insert(cliente);
 
         }
 
@@ -125,12 +125,12 @@ namespace Lppa.Business
 
         }
 
-        public int ValidarSistemaBancario (long NroDoc)
-        {
-            var us = new SistemaBancarioRepository();
-            return us.ValidarSistemaBancario(NroDoc);
+        //public int ValidarSistemaBancario (long NroDoc)
+        //{
+        //    var us = new SistemaBancarioRepository();
+        //    return us.ValidarSistemaBancario(NroDoc);
 
-        }
+        //}
 
     }
 }

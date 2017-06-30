@@ -289,15 +289,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Data\Lppa.Data\Lppa.Data.csproj">
-      <Project>{a435dbbe-7308-4596-b5e5-86108445327c}</Project>
+      <Project>{008e781b-fe5c-4eb5-9b64-cd0ef8f5b7a8}</Project>
       <Name>Lppa.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Shared\Lppa.Entities\Lppa.Entities.csproj">
-      <Project>{ADF8BD8B-5CB1-47A5-A9BB-F85DCD93DCA5}</Project>
+      <Project>{adf8bd8b-5cb1-47a5-a9bb-f85dcd93dca5}</Project>
       <Name>Lppa.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lppa.UI.Process\Lppa.UI.Process.csproj">
-      <Project>{C012F673-E586-47C3-B7E3-C11C86C28F2B}</Project>
+      <Project>{c012f673-e586-47c3-b7e3-c11c86c28f2b}</Project>
       <Name>Lppa.UI.Process</Name>
     </ProjectReference>
   </ItemGroup>
