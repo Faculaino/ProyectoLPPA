@@ -15,10 +15,33 @@ namespace Lppa.UI.Web.Controllers
     {
         private LppaBD db = new LppaBD();
 
-        // GET: Cliente
+
         public ActionResult Index()
         {
-            return View(db.Cliente.ToList());
+                return View(db.Cliente.ToList());
+          
+
+        }
+
+        [HttpPost]
+        public ActionResult BuscarDNI(long dni)
+        {
+
+            var ccc = new ClienteComponentController();
+            var nuevoCliente = ccc.BuscarPorDNI(dni);
+
+            if (nuevoCliente == null)
+            {
+                //return RedirectToAction("Index");
+                return null;
+
+            }
+            else
+            {
+                return View(nuevoCliente);
+            }
+
+
         }
 
         // GET: Cliente/Details/5
@@ -116,25 +139,7 @@ namespace Lppa.UI.Web.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public ActionResult BuscarDNI(long dni)
-        {
 
-            var ccc = new ClienteComponentController();
-            var nuevoCliente = ccc.BuscarPorDNI(dni);
-
-            if (nuevoCliente == null)
-            {
-                return RedirectToAction("Index");
-                
-            }
-            else
-            {
-                return View(nuevoCliente);
-            }
-
-            
-        }
 
 
         protected override void Dispose(bool disposing)

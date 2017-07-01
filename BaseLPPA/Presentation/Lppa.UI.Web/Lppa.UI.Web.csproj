@@ -283,6 +283,7 @@
     <Content Include="Views\Banco\Details.cshtml" />
     <Content Include="Views\Banco\Edit.cshtml" />
     <Content Include="Views\Banco\Index.cshtml" />
+    <Content Include="Views\Cliente\BuscarDNI.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
