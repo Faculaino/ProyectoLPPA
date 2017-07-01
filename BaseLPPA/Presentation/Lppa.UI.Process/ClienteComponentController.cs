@@ -22,5 +22,11 @@ namespace Lppa.UI.Process
             var bc = new GestorBusinessComponent();
             return bc.SeleccionarCliente();
         }
+
+        public ClienteEntity BuscarPorDNI(long dni)
+        {
+            var bc = new GestorBusinessComponent();
+            return bc.BuscarPorDNI(dni);
+        }
     }
 }

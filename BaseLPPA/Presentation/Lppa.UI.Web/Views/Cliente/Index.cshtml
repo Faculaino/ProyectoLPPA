@@ -5,12 +5,17 @@
 }
 
 <h2 class="ListaClientes">Lista de Clientes</h2>
-<button>
+<button style="float:right;">
     @Html.ActionLink("Nuevo Cliente", "Create")
 </button>
-<br />
-<br />
 
+@using (Html.BeginForm("BuscarDNI", "Cliente", FormMethod.Post, new { @class = "form" }))
+{   <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input id="dniCliente" type="text" class="form-control" name="DNI" placeholder="DNI" style="width:200px;">
+    </div>
+}
+<br />
 <table class="table">
     <tr>
         <th>

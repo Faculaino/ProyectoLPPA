@@ -12,10 +12,11 @@ namespace Lppa.Data
     using System;
     using System.Collections.Generic;
     using Entities;
+    using System.Data.SqlClient;
 
     public partial class Cliente
     {
-        LppaBD db = new LppaBD();
+       LppaBD db = new LppaBD();
 
         public int ID { get; set; }
         public string Nombre { get; set; }
@@ -35,21 +36,62 @@ namespace Lppa.Data
 
         public void Insert(ClienteEntity cliente)
         {
-            cliente.ChangedBy = Guid.NewGuid().ToString();
-            cliente.ChangedOn = DateTime.Now;
-            cliente.CreatedBy = Guid.NewGuid().ToString();
-            cliente.CreatedOn = DateTime.Now;
-            cliente.CodEstado = 1;
+            var nuevoCliente = new Cliente()
+            {
+                Nombre = cliente.Nombre,
+                Apellido = cliente.Apellido,
+                DNI = cliente.DNI,
+                Domicilio = cliente.Domicilio,
+                Ingreso = cliente.Ingreso,
+                EstadoCivil = cliente.EstadoCivil,
+                FechaNacimiento = cliente.FechaNacimiento,
+                Ocupacion = cliente.Ocupacion,
+                Sexo = cliente.Sexo,
+                ChangedBy = Guid.NewGuid().ToString(),
+                ChangedOn = DateTime.Now,
+                CreatedBy = Guid.NewGuid().ToString(),
+                CreatedOn = DateTime.Now,
+                CodEstado = 1
+            
 
-            db.TablaCliente.Add(cliente);
-            //db.Cliente.Add(cliente);
+            };
+
+            db.Cliente.Add(nuevoCliente);
             db.SaveChanges();
         }
-
-       
+        
         public List<ClienteEntity> ListarTodos()
         {
             return null;
+        }
+
+        public ClienteEntity SearhByDNI(long dni)
+        {
+            //VER Si se puede buscar por un campo que no sea PRIMARY KEY
+            var query = db.Cliente.Find(dni);
+            try
+            {
+                var nuevoCliente = new ClienteEntity()
+                {
+                    Nombre = query.Nombre,
+                    Apellido = query.Apellido,
+                    DNI = query.DNI,
+                    Domicilio = query.Domicilio,
+                    EstadoCivil = query.EstadoCivil,
+                    FechaNacimiento = query.FechaNacimiento,
+                    Ingreso = query.Ingreso,
+                    Ocupacion = query.Ocupacion,
+                    Sexo = query.Sexo
+
+                };
+                return nuevoCliente;
+
+            }
+            catch
+            {
+                return null;
+            }
+         
         }
     }
 }

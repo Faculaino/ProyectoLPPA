@@ -125,6 +125,12 @@ namespace Lppa.Business
 
         }
 
+        public ClienteEntity BuscarPorDNI(long dni)
+        {
+            var cr = new Cliente();
+            return cr.SearhByDNI(dni);
+        }
+
         //public int ValidarSistemaBancario (long NroDoc)
         //{
         //    var us = new SistemaBancarioRepository();

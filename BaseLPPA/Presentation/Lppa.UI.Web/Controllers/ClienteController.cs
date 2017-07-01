@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Lppa.Data;
+using Lppa.UI.Process;
 
 namespace Lppa.UI.Web.Controllers
 {
@@ -114,6 +115,27 @@ namespace Lppa.UI.Web.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public ActionResult BuscarDNI(long dni)
+        {
+
+            var ccc = new ClienteComponentController();
+            var nuevoCliente = ccc.BuscarPorDNI(dni);
+
+            if (nuevoCliente == null)
+            {
+                return RedirectToAction("Index");
+                
+            }
+            else
+            {
+                return View(nuevoCliente);
+            }
+
+            
+        }
+
 
         protected override void Dispose(bool disposing)
         {
