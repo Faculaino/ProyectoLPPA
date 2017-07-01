@@ -199,6 +199,7 @@
     <Content Include="Content\Images\Logo GP Baires.jpg" />
     <Content Include="Content\Images\NuevaTarjeta.png" />
     <Content Include="Content\InitialView.css" />
+    <Content Include="Content\ProgressBar.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

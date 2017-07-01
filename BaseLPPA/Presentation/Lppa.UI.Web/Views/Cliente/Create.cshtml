@@ -10,10 +10,31 @@
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <link href="~/Content/ProgressBar.css" rel="stylesheet" />
 </head>
 <body>
     <h2 class="NuevoCliente">Nuevo Cliente</h2>
-
+    <div class="progress" style="height:90px;">
+        <div class="circle done" style="margin-top:10px;">
+            <span class="label">1</span>
+            <span class="title">Cliente</span>
+        </div>
+        <span class="bar done" style="width:150px;"></span>
+        <div class="circle done">
+            <span class="label">2</span>
+            <span class="title">Tarjeta</span>
+        </div>
+        <span class="bar half" style="width:150px;"></span>
+        <div class="circle active">
+            <span class="label">3</span>
+            <span class="title">Contrato</span>
+        </div>
+        <span class="bar" style="width:150px" ;></span>
+        <div class="circle">
+            <span class="label">4</span>
+            <span class="title">¡Listo!</span>
+        </div>
+    </div>
 
     <div id="pantalla">
 
@@ -137,12 +158,47 @@
             $("#btnSiguiente").click(function () {
                 $("#pantalla").slideUp();
 
+                //var i = 1;
+                //$('.progress .circle').removeClass().addClass('circle');
+                //$('.progress .bar').removeClass().addClass('bar');
+                //setInterval(function () {
+                //    $('.progress .circle:nth-of-type(' + i + ')').addClass('active');
+                //    $('.progress .circle:nth-of-type(' + (i - 1) + ')').removeClass('active').addClass('done');
+                //    $('.progress .circle:nth-of-type(' + (i - 1) + ') .label').html('&#10003;');
+                //});
 
 
 
             });
         });
 
+    </script>
+    </script>
+    <script id="progressBar">
+            $(document).ready(function () {
+                var i = 1;
+                $('.progress .circle').removeClass().addClass('circle');
+                $('.progress .bar').removeClass().addClass('bar');
+                setInterval(function () {
+                    $('.progress .circle:nth-of-type(' + i + ')').addClass('active');
+
+                    $('.progress .circle:nth-of-type(' + (i - 1) + ')').removeClass('active').addClass('done');
+
+                    $('.progress .circle:nth-of-type(' + (i - 1) + ') .label').html('&#10003;');
+
+                    $('.progress .bar:nth-of-type(' + (i - 1) + ')').addClass('active');
+
+                    $('.progress .bar:nth-of-type(' + (i - 2) + ')').removeClass('active').addClass('done');
+
+                    i++;
+
+                    if (i == 0) {
+                        $('.progress .bar').removeClass().addClass('bar');
+                        $('.progress div.circle').removeClass().addClass('circle');
+                        i = 1;
+                    }
+                }, 1000);
+            });
     </script>
     
     
