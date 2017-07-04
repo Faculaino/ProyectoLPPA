@@ -1,5 +1,7 @@
 ﻿@model Lppa.Data.Cliente
 
+
+
 @{
     ViewBag.Title = "Nuevo Cliente";
 }
@@ -9,35 +11,50 @@
 <head>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    @*<script src="~/Scripts/jquery-3.1.1.min.js"></script>*@
     <link href="~/Content/ProgressBar.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 </head>
 <body>
     <h2 class="NuevoCliente">Nuevo Cliente</h2>
-    <div class="progress" style="height:90px;">
-        <div class="circle done" style="margin-top:10px;">
-            <span class="label">1</span>
-            <span class="title">Cliente</span>
+    
+    <!--ProgressBar-->
+    <div class="row bs-wizard" style="border-bottom:0;">
+        <!-- active -->
+        <!-- complete -->
+        <!-- disable -->
+        <div class="col-xs-3 bs-wizard-step active" id="Paso1">
+            <div class="text-center bs-wizard-stepnum">Paso 1</div>
+            <div class="progress" id="Paso1Progress"><div class="progress-bar"></div></div>
+            <a href="#" class="bs-wizard-dot"></a>
+            <div class="bs-wizard-info text-center">Datos del Cliente</div>
         </div>
-        <span class="bar done" style="width:150px;"></span>
-        <div class="circle done">
-            <span class="label">2</span>
-            <span class="title">Tarjeta</span>
+
+        <div class="col-xs-3 bs-wizard-step disabled" id="Paso2">
+            <div class="text-center bs-wizard-stepnum">Paso 2</div>
+            <div class="progress" id="Paso2Progress"><div class="progress-bar"></div></div>
+            <a href="#" class="bs-wizard-dot" id="Punto2"></a>
+            <div class="bs-wizard-info text-center">Datos de la Tarjeta</div>
         </div>
-        <span class="bar half" style="width:150px;"></span>
-        <div class="circle active">
-            <span class="label">3</span>
-            <span class="title">Contrato</span>
+
+        <div class="col-xs-3 bs-wizard-step disabled" id="Paso3">
+            <div class="text-center bs-wizard-stepnum">Paso 3</div>
+            <div class="progress" id="Paso3Progress"><div class="progress-bar"></div></div>
+            <a href="#" class="bs-wizard-dot" id="Punto3"></a>
+            <div class="bs-wizard-info text-center">Datos del Contrato</div>
         </div>
-        <span class="bar" style="width:150px" ;></span>
-        <div class="circle">
-            <span class="label">4</span>
-            <span class="title">¡Listo!</span>
+
+        <div class="col-xs-3 bs-wizard-step disabled" id="Paso4">
+            <div class="text-center bs-wizard-stepnum">Paso 4</div>
+            <div class="progress"><div class="progress-bar"></div></div>
+            <a href="#" class="bs-wizard-dot" id="Punto4"></a>
+            <div class="bs-wizard-info text-center">¡Listo!</div>
         </div>
     </div>
 
+    <!--Pantalla PRINCIPAL-->
     <div id="pantalla">
-
 
         @using (Html.BeginForm())
         {
@@ -52,15 +69,24 @@
                         <div class="panel-body">
                             <div class="form-group col-md-6">
                                 @Html.LabelFor(m => m.Nombre)
-                                @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control required" })
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control required" })
+                                </div>
                             </div>
                             <div class="form-group col-md-6">
                                 @Html.LabelFor(m => m.Apellido)
-                                @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control required" })
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control required" })
+                                </div>
                             </div>
                             <div class="form-group col-md-6">
                                 @Html.LabelFor(m => m.DNI)
-                                @Html.TextBoxFor(m => m.DNI, new { @class = "form-control digits required" })
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-chevron-right"></i></span>
+                                    @Html.TextBoxFor(m => m.DNI, new { @class = "form-control required" })
+                                </div>
                             </div>
                             <div class="form-group col-md-6">
                                 @{
@@ -71,7 +97,13 @@
                             };
                                 }
                                 @Html.LabelFor(m => m.EstadoCivil)
-                                @Html.DropDownListFor(m => m.EstadoCivil, estadoCivil, new { @class = "form-control" })
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </span>
+                                    @Html.DropDownListFor(m => m.EstadoCivil, estadoCivil, new { @class = "form-control" })
+                                </div>
+                               
                             </div>
                             <div class="form-group col-md-6">
                                 @{
@@ -82,21 +114,34 @@
                             };
                                 }
                                 @Html.LabelFor(m => m.Sexo)
-                                @Html.DropDownListFor(m => m.Sexo, sexo, new { @class = "form-control required" })
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </span>
+                                    @Html.DropDownListFor(m => m.Sexo, sexo, new { @class = "form-control required" })
+                                </div>
                             </div>
-                            @*<div class="form-group col-md-6">
-                                    @Html.LabelFor(m => m.FechaNacimiento)
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
-
-                                    </div>
-                                </div>*@
                             <div class="form-group col-md-6">
                                 @Html.LabelFor(m => m.FechaNacimiento)
-                                @Html.TextBoxFor(m => m.FechaNacimiento, new { @class = "form-control required" })
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                    @Html.TextBoxFor(m => m.FechaNacimiento, new { @class = "form-control required"})
+                                    @*@Html.TextBoxFor(m => m.FechaNacimiento, new { @Value = Model.FechaNacimiento.ToString("dd/MM/yyyy"), @class = "form-control datepicker required"})*@
+                                </div>
+
+
+
                             </div>
+
+                            <div class="input-group date" data-provide="datepicker">
+                                <input type="text" class="form-control">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -117,18 +162,24 @@
                                 @Html.LabelFor(m => m.Ocupacion)
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-education"></span>
+                                        <span class="glyphicon glyphicon-briefcase"></span>
                                     </span>
                                     @Html.DropDownListFor(m => m.Ocupacion, opcionesOcupacion, new { @class = "form-control required" })
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
                                 @Html.LabelFor(m => m.Ingreso)
-                                @Html.TextBoxFor(m => m.Ingreso, new { @class = "form-control required" })
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                                    @Html.TextBoxFor(m => m.Ingreso, new { @class = "form-control required" })
+                                </div>
                             </div>
                             <div class="form-group col-md-6">
                                 @Html.LabelFor(m => m.Domicilio)
-                                @Html.TextBoxFor(m => m.Domicilio, new { @class = "form-control required" })
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                    @Html.TextBoxFor(m => m.Domicilio, new { @class = "form-control required" })
+                                </div>
                             </div>
 
                         </div>
@@ -138,72 +189,84 @@
 
             </div>
                                     }
+        <div class="form-group">
+            <div class="col-md-offset-10 col-md-10">
+                <input type="submit" value="Siguiente" id="btnSiguiente" class="btn btn-primary" />
 
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-10 col-md-10">
-            <input type="submit" value="Siguiente" id="btnSiguiente" class="btn btn-default" />
-
+            </div>
         </div>
+
+       
+
     </div>
-    <button>
-        @Html.ActionLink("Ver Lista", "Index")
-    </button>
 
+    <!-- Comienzo PANTALLA 2 -->
+    <div id="pantalla2" style="display:none;">
 
-@section Scripts{
-    
-    <script>
-        $(document).ready(function () {
-            $("#btnSiguiente").click(function () {
-                $("#pantalla").slideUp();
-
-                //var i = 1;
-                //$('.progress .circle').removeClass().addClass('circle');
-                //$('.progress .bar').removeClass().addClass('bar');
-                //setInterval(function () {
-                //    $('.progress .circle:nth-of-type(' + i + ')').addClass('active');
-                //    $('.progress .circle:nth-of-type(' + (i - 1) + ')').removeClass('active').addClass('done');
-                //    $('.progress .circle:nth-of-type(' + (i - 1) + ') .label').html('&#10003;');
-                //});
+        <h2>PANTALLA 2</h2>
 
 
 
-            });
-        });
+        <div class="form-group" >
+            <div class="col-md-offset-10 col-md-10">
+                <input type="submit" value="Ir a Paso1" id="btnaPaso1" class="btn btn-info" />
+                <input type="submit" value="Siguiente" id="btnSiguiente2" class="btn btn-primary" />
+            </div>
+        </div>
 
-    </script>
-    </script>
-    <script id="progressBar">
-            $(document).ready(function () {
-                var i = 1;
-                $('.progress .circle').removeClass().addClass('circle');
-                $('.progress .bar').removeClass().addClass('bar');
-                setInterval(function () {
-                    $('.progress .circle:nth-of-type(' + i + ')').addClass('active');
+       
 
-                    $('.progress .circle:nth-of-type(' + (i - 1) + ')').removeClass('active').addClass('done');
+    </div>
 
-                    $('.progress .circle:nth-of-type(' + (i - 1) + ') .label').html('&#10003;');
+    <!-- Comienzo PANTALLA 3 -->
+    <div id="pantalla3" style="display:none;">
 
-                    $('.progress .bar:nth-of-type(' + (i - 1) + ')').addClass('active');
+        <h2>PANTALLA 3</h2>
 
-                    $('.progress .bar:nth-of-type(' + (i - 2) + ')').removeClass('active').addClass('done');
 
-                    i++;
 
-                    if (i == 0) {
-                        $('.progress .bar').removeClass().addClass('bar');
-                        $('.progress div.circle').removeClass().addClass('circle');
-                        i = 1;
-                    }
-                }, 1000);
-            });
-    </script>
-    
-    
+
+        <div class="form-group">
+            <div class="col-md-offset-10 col-md-10">
+                <input type="submit" value="Ir a Paso1" id="btnaPaso2" class="btn btn-info" />
+                <input type="submit" value="Siguiente" id="btnSiguiente3" class="btn btn-primary" />
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Comienzo PANTALLA 4 -->
+    <div id="pantalla4" style="display:none;">
+
+        <h2>PANTALLA 4</h2>
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-10 col-md-10">
+                <input type="submit" value="Ir a Paso1" id="btnaPaso3" class="btn btn-info" />
+                <input type="submit" value="Siguiente" id="btnFinalizar" class="btn btn-primary" />
+            </div>
+        </div>
+
+
+    </div>
+
+
+    @*<button>
+            @Html.ActionLink("Ver Lista", "Index")
+        </button>*@
+
+
+    @section Scripts{
+        <script src="~/Scripts/ProgressBar.js"></script>
+        <script>
+            $('.datepicker').datepicker();
+        </script>
     }
-   
+
 </body>
 
 </html>

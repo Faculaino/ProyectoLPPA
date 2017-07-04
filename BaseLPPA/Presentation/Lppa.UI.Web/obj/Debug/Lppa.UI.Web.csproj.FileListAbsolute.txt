@@ -457,6 +457,12 @@ C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Microsoft
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\Lppa.Business.pdb
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\es\System.Web.Helpers.resources.dll
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\es\System.Web.Mvc.resources.dll
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\es\System.Web.Razor.resources.dll
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\es\System.Web.WebPages.resources.dll
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\bin\es\System.Web.WebPages.Razor.resources.dll
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\obj\Debug\Lppa.UI.Web.csprojResolveAssemblyReference.cache
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\obj\Debug\Lppa.UI.Web.Properties.Resources.resources
 C:\Users\facun\LPPA\ProyectoLPPA\BaseLPPA\Presentation\Lppa.UI.Web\obj\Debug\Lppa.UI.Web.csproj.GenerateResource.Cache
