@@ -13,45 +13,13 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     @*<script src="~/Scripts/jquery-3.1.1.min.js"></script>*@
     <link href="~/Content/ProgressBar.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    
 </head>
 <body>
     <h2 class="NuevoCliente">Nuevo Cliente</h2>
-    
+
     <!--ProgressBar-->
-    <div class="row bs-wizard" style="border-bottom:0;">
-        <!-- active -->
-        <!-- complete -->
-        <!-- disable -->
-        <div class="col-xs-3 bs-wizard-step active" id="Paso1">
-            <div class="text-center bs-wizard-stepnum">Paso 1</div>
-            <div class="progress" id="Paso1Progress"><div class="progress-bar"></div></div>
-            <a href="#" class="bs-wizard-dot"></a>
-            <div class="bs-wizard-info text-center">Datos del Cliente</div>
-        </div>
-
-        <div class="col-xs-3 bs-wizard-step disabled" id="Paso2">
-            <div class="text-center bs-wizard-stepnum">Paso 2</div>
-            <div class="progress" id="Paso2Progress"><div class="progress-bar"></div></div>
-            <a href="#" class="bs-wizard-dot" id="Punto2"></a>
-            <div class="bs-wizard-info text-center">Datos de la Tarjeta</div>
-        </div>
-
-        <div class="col-xs-3 bs-wizard-step disabled" id="Paso3">
-            <div class="text-center bs-wizard-stepnum">Paso 3</div>
-            <div class="progress" id="Paso3Progress"><div class="progress-bar"></div></div>
-            <a href="#" class="bs-wizard-dot" id="Punto3"></a>
-            <div class="bs-wizard-info text-center">Datos del Contrato</div>
-        </div>
-
-        <div class="col-xs-3 bs-wizard-step disabled" id="Paso4">
-            <div class="text-center bs-wizard-stepnum">Paso 4</div>
-            <div class="progress"><div class="progress-bar"></div></div>
-            <a href="#" class="bs-wizard-dot" id="Punto4"></a>
-            <div class="bs-wizard-info text-center">¡Listo!</div>
-        </div>
-    </div>
+    @Html.Partial("_ProgressBar")
 
     <!--Pantalla PRINCIPAL-->
     <div id="pantalla">
@@ -103,7 +71,7 @@
                                     </span>
                                     @Html.DropDownListFor(m => m.EstadoCivil, estadoCivil, new { @class = "form-control" })
                                 </div>
-                               
+
                             </div>
                             <div class="form-group col-md-6">
                                 @{
@@ -125,7 +93,7 @@
                                 @Html.LabelFor(m => m.FechaNacimiento)
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                    @Html.TextBoxFor(m => m.FechaNacimiento, new { @class = "form-control required"})
+                                    @Html.TextBoxFor(m => m.FechaNacimiento, new { @class = "form-control required" })
                                     @*@Html.TextBoxFor(m => m.FechaNacimiento, new { @Value = Model.FechaNacimiento.ToString("dd/MM/yyyy"), @class = "form-control datepicker required"})*@
                                 </div>
 
@@ -133,12 +101,7 @@
 
                             </div>
 
-                            <div class="input-group date" data-provide="datepicker">
-                                <input type="text" class="form-control">
-                                <div class="input-group-addon">
-                                    <span class="glyphicon glyphicon-th"></span>
-                                </div>
-                            </div>
+                           
 
 
 
@@ -196,36 +159,27 @@
             </div>
         </div>
 
-       
+
 
     </div>
 
     <!-- Comienzo PANTALLA 2 -->
     <div id="pantalla2" style="display:none;">
-
         <h2>PANTALLA 2</h2>
-
-
-
-        <div class="form-group" >
+        <div class="form-group">
             <div class="col-md-offset-10 col-md-10">
                 <input type="submit" value="Ir a Paso1" id="btnaPaso1" class="btn btn-info" />
                 <input type="submit" value="Siguiente" id="btnSiguiente2" class="btn btn-primary" />
             </div>
         </div>
 
-       
+
 
     </div>
 
     <!-- Comienzo PANTALLA 3 -->
     <div id="pantalla3" style="display:none;">
-
         <h2>PANTALLA 3</h2>
-
-
-
-
         <div class="form-group">
             <div class="col-md-offset-10 col-md-10">
                 <input type="submit" value="Ir a Paso1" id="btnaPaso2" class="btn btn-info" />
@@ -238,12 +192,7 @@
 
     <!-- Comienzo PANTALLA 4 -->
     <div id="pantalla4" style="display:none;">
-
         <h2>PANTALLA 4</h2>
-
-
-
-
         <div class="form-group">
             <div class="col-md-offset-10 col-md-10">
                 <input type="submit" value="Ir a Paso1" id="btnaPaso3" class="btn btn-info" />
@@ -262,9 +211,7 @@
 
     @section Scripts{
         <script src="~/Scripts/ProgressBar.js"></script>
-        <script>
-            $('.datepicker').datepicker();
-        </script>
+        
     }
 
 </body>
