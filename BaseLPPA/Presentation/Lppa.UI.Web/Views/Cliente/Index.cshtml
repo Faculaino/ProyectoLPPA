@@ -9,7 +9,7 @@
     @Html.ActionLink("Nuevo Cliente", "Create")
 </button>
 
-@using (Html.BeginForm("BuscarDNI", "Cliente", FormMethod.Post, new { @class = "form" }))
+@using (Html.BeginForm("Index", "Cliente", FormMethod.Post, new { @class = "form" }))
 {   <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
         <input id="dniCliente" type="text" class="form-control" name="DNI" placeholder="DNI" style="width:200px;">
@@ -81,7 +81,7 @@
             </td>
             <td>
                 @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.ID })
+                
             </td>
         </tr>
     }

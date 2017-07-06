@@ -11,10 +11,10 @@ namespace Lppa.UI.Process
 {
     public class ClienteComponentController
     {
-        public void AgregarunCliente(ClienteEntity cliente)
+        public ClienteEntity AgregarunCliente(ClienteEntity cliente)
         {
             var bc = new GestorBusinessComponent();
-            bc.AgregarCliente(cliente);
+            return bc.AgregarCliente(cliente);
         }
 
         public List<ClienteEntity> SeleccionarCliente()
@@ -26,7 +26,7 @@ namespace Lppa.UI.Process
         public ClienteEntity BuscarPorDNI(long dni)
         {
             var bc = new GestorBusinessComponent();
-            return bc.BuscarPorDNI(dni);
+            return bc.SearchCliente(dni);
         }
     }
 }

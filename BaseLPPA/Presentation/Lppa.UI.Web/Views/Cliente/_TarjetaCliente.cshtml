@@ -1,0 +1,31 @@
+﻿@model Lppa.Data.Tarjeta
+
+@{
+    ViewBag.Title = "Tarjetas";
+}
+
+<h4 class="TipoTarjeta" style="margin-top: 70px;">Tipo de Tarjeta</h4>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group col-md-4">
+        @{
+            var tipoTarjeta = new List<SelectListItem>()
+                            {
+                                new SelectListItem() {Text = "Visa", Value = "Visa"},
+                                new SelectListItem() {Text = "American Express", Value = "American Express"},
+                                new SelectListItem() {Text = "MasterCard", Value = "MasterCard"}
+                            };
+        }
+        @Html.LabelFor(m => m.Marca)
+        <div class="input-group">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-credit-card"></span>
+            </span>
+            @Html.DropDownListFor(m => m.Marca, tipoTarjeta, new { @class = "form-control" })
+        </div>
+
+    </div>
+            }
+            

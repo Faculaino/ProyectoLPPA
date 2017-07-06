@@ -34,64 +34,6 @@ namespace Lppa.Data
         public string ChangedBy { get; set; }
         public System.DateTime ChangedOn { get; set; }
 
-        public void Insert(ClienteEntity cliente)
-        {
-            var nuevoCliente = new Cliente()
-            {
-                Nombre = cliente.Nombre,
-                Apellido = cliente.Apellido,
-                DNI = cliente.DNI,
-                Domicilio = cliente.Domicilio,
-                Ingreso = cliente.Ingreso,
-                EstadoCivil = cliente.EstadoCivil,
-                FechaNacimiento = cliente.FechaNacimiento,
-                Ocupacion = cliente.Ocupacion,
-                Sexo = cliente.Sexo,
-                ChangedBy = Guid.NewGuid().ToString(),
-                ChangedOn = DateTime.Now,
-                CreatedBy = Guid.NewGuid().ToString(),
-                CreatedOn = DateTime.Now,
-                CodEstado = 1
-            
-
-            };
-
-            db.Cliente.Add(nuevoCliente);
-            db.SaveChanges();
-        }
-        
-        public List<ClienteEntity> ListarTodos()
-        {
-            return null;
-        }
-
-        public ClienteEntity SearhByDNI(long dni)
-        {
-            //VER Si se puede buscar por un campo que no sea PRIMARY KEY
-            var query = db.Cliente.Find(dni);
-            try
-            {
-                var nuevoCliente = new ClienteEntity()
-                {
-                    Nombre = query.Nombre,
-                    Apellido = query.Apellido,
-                    DNI = query.DNI,
-                    Domicilio = query.Domicilio,
-                    EstadoCivil = query.EstadoCivil,
-                    FechaNacimiento = query.FechaNacimiento,
-                    Ingreso = query.Ingreso,
-                    Ocupacion = query.Ocupacion,
-                    Sexo = query.Sexo
-
-                };
-                return nuevoCliente;
-
-            }
-            catch
-            {
-                return null;
-            }
-         
-        }
+       
     }
 }

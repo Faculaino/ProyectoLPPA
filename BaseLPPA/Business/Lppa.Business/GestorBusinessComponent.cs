@@ -88,11 +88,11 @@ namespace Lppa.Business
         /// 
         /// </summary>
         /// <param name="user"></param>
-        public void AgregarCliente(ClienteEntity cliente)
+        public ClienteEntity AgregarCliente(ClienteEntity cliente)
         {
             //Validar datos del negocio
-            var cr = new Cliente();
-            cr.Insert(cliente);
+            var cr = new ClienteRepository();
+            return cr.Insert(cliente);
 
         }
 
@@ -125,11 +125,13 @@ namespace Lppa.Business
 
         }
 
-        public ClienteEntity BuscarPorDNI(long dni)
+        
+        public ClienteEntity SearchCliente(long dni)
         {
-            var cr = new Cliente();
-            return cr.SearhByDNI(dni);
+            var us = new ClienteRepository();
+            return us.SearhByDNI(dni);
         }
+
 
         //public int ValidarSistemaBancario (long NroDoc)
         //{
