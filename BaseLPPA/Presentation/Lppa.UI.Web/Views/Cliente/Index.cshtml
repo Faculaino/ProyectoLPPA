@@ -5,9 +5,12 @@
 }
 
 <h2 class="ListaClientes">Lista de Clientes</h2>
-<button style="float:right;">
-    @Html.ActionLink("Nuevo Cliente", "Create")
-</button>
+@using (Html.BeginForm("Create", "Cliente", FormMethod.Get))
+{
+    <button style="float:right;">
+        @Html.ActionLink("Nuevo Cliente", "Create")
+    </button>
+}
 
 @using (Html.BeginForm("Index", "Cliente", FormMethod.Post, new { @class = "form" }))
 {   <div class="input-group">

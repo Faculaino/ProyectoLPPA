@@ -11,13 +11,9 @@ namespace Lppa.Data
 {
     using System;
     using System.Collections.Generic;
-    using Entities;
-    using System.Data.SqlClient;
-
+    
     public partial class Cliente
     {
-       LppaBD db = new LppaBD();
-
         public int ID { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -33,7 +29,5 @@ namespace Lppa.Data
         public System.DateTime CreatedOn { get; set; }
         public string ChangedBy { get; set; }
         public System.DateTime ChangedOn { get; set; }
-
-       
     }
 }

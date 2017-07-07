@@ -9,15 +9,14 @@
 
 namespace Lppa.Data
 {
-    using Entities;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class LppaBD : DbContext
     {
         public LppaBD()
-            : base("LppaBD")
+            : base("name=LppaBD")
         {
         }
     
@@ -34,7 +33,5 @@ namespace Lppa.Data
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Veraz> Veraz { get; set; }
         public virtual DbSet<Cliente> Cliente { get; set; }
-
-        public DbSet<ClienteEntity> TablaCliente { get; set; }
     }
 }

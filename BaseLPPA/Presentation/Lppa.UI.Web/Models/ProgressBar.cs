@@ -7,5 +7,6 @@ namespace Lppa.UI.Web.Models
 {
     public class ProgressBar
     {
+        
     }
 }

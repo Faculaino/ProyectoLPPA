@@ -28,10 +28,10 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nombre" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="Apellido" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="DNI" Type="bigint" Nullable="false" />
-    <Property Name="Domicilio" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Domicilio" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="EstadoCivil" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
     <Property Name="Ingreso" Type="decimal" Precision="18" Scale="0" Nullable="false" />

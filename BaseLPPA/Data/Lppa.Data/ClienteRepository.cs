@@ -36,7 +36,7 @@ namespace Lppa.Data
             c.ChangedOn = cliente.ChangedOn;
             c.CreatedBy = cliente.CreatedBy;
             c.CreatedOn = cliente.CreatedOn;
-            c.CodEstado = cliente.CodEstado;
+            
             
             db.Cliente.Add(c);
 

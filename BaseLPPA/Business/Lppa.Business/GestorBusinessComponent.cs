@@ -84,10 +84,6 @@ namespace Lppa.Business
         //}
         #endregion
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="user"></param>
         public ClienteEntity AgregarCliente(ClienteEntity cliente)
         {
             //Validar datos del negocio

@@ -21,16 +21,15 @@ namespace Lppa.UI.Web.Controllers
         {
             return View(db.Cliente.ToList());
 
-
         }
-        
+
         [HttpPost]
         public ActionResult Index(long dni)
         {
 
             var ccc = new ClienteComponentController();
             var nuevoCliente = ccc.BuscarPorDNI(dni);
-            
+
             if (nuevoCliente == null)
             {
                 //return RedirectToAction("Index");
@@ -56,7 +55,7 @@ namespace Lppa.UI.Web.Controllers
                     CreatedBy = nuevoCliente.CreatedBy,
                     CreatedOn = nuevoCliente.CreatedOn
                 };
-                
+
 
                 var lista = new List<Cliente>();
                 lista.Add(c);
@@ -89,12 +88,11 @@ namespace Lppa.UI.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(ClienteEntity cliente)
+        public void Create(ClienteEntity cliente)
         {
             var ccc = new ClienteComponentController();
-            var nuevoCliente = ccc.AgregarunCliente(cliente);
-
-            return RedirectToAction("Index");
+            ccc.AgregarunCliente(cliente);
+            
         }
 
         // POST: Cliente/Create
@@ -170,9 +168,6 @@ namespace Lppa.UI.Web.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-
-
 
         protected override void Dispose(bool disposing)
         {

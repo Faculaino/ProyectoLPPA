@@ -374,6 +374,7 @@
     <Content Include="Views\Tarjeta\Edit.cshtml" />
     <Content Include="Views\Tarjeta\Index.cshtml" />
     <Content Include="Views\Cliente\_TarjetaCliente.cshtml" />
+    <Content Include="Views\Cliente\_DatosCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
