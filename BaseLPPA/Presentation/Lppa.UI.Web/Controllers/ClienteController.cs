@@ -84,15 +84,50 @@ namespace Lppa.UI.Web.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            ViewBag.Progress = 1;
             return View();
+
+
         }
 
         [HttpPost]
-        public void Create(ClienteEntity cliente)
+        public ActionResult Create(ClienteEntity cliente)
         {
-            var ccc = new ClienteComponentController();
-            ccc.AgregarunCliente(cliente);
-            
+            ViewBag.Progress = 1;
+            if (ViewBag.Progress == 1)
+            {
+                var ccc = new ClienteComponentController();
+                ccc.AgregarunCliente(cliente);
+                ViewBag.Cliente = cliente.Nombre + " " + cliente.Apellido;
+                ViewBag.ClienteDNI = cliente.DNI;
+                ViewBag.Progress = 2;
+                return View();
+
+            }
+            else if (ViewBag.Progress == 2)
+            {
+
+                ViewBag.Progress = 3;
+                return View();
+
+            }
+            else if (ViewBag.Progress == 3)
+            {
+                ViewBag.Progress = 3;
+                return View();
+
+            }
+            else if (ViewBag.Progress == 4)
+            {
+                ViewBag.Progress = 4;
+                return View();
+
+
+            }
+            return View();
+
+
+
         }
 
         // POST: Cliente/Create
