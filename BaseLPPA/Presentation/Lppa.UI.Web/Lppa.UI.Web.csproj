@@ -191,6 +191,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BancoViewModel.cs" />
     <Compile Include="ViewModels\ClienteViewModel.cs" />
+    <Compile Include="ViewModels\ContratoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -375,6 +376,7 @@
     <Content Include="Views\Tarjeta\Index.cshtml" />
     <Content Include="Views\Cliente\_TarjetaCliente.cshtml" />
     <Content Include="Views\Cliente\_DatosCliente.cshtml" />
+    <Content Include="Views\Cliente\_ContratoCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

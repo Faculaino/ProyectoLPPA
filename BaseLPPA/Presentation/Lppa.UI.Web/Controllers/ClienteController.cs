@@ -23,6 +23,13 @@ namespace Lppa.UI.Web.Controllers
 
         }
 
+        //[HttpGet]
+        //public ActionResult Contrato()
+        //{
+        //    ViewBag.Progress = 3;
+        //    return RedirectToAction("Create");
+        //}
+
         [HttpPost]
         public ActionResult Index(long dni)
         {
