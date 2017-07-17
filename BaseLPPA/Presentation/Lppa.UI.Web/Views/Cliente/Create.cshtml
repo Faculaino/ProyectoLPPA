@@ -33,6 +33,7 @@
             {
                 @Html.AntiForgeryToken()
                 @Html.Partial("_DatosCliente")
+
                 <div class="form-group">
                     <div class="col-md-offset-10 col-md-10">
                         <input type="submit" value="Siguiente" id="btnSiguiente" class="btn btn-primary" />
@@ -50,6 +51,7 @@
             {
                 @Html.AntiForgeryToken()
                 @Html.Partial("_TarjetaCliente")
+              
                 <div class="form-group">
                     <div class="col-md-offset-10 col-md-10">
                         <input type="submit" value="Siguiente" id="btnSiguiente2" class="btn btn-primary" />
@@ -66,7 +68,7 @@
     {
          <!-- Comienzo PANTALLA 3 -->
         <div id="pantalla3">
-          @Html.Partial("_ContratoCliente")
+            @Html.Partial("_ContratoCliente")
             <div class="form-group">
                 <div class="col-md-offset-10 col-md-10">
                     <input type="submit" value="Ir a Paso1" id="btnaPaso2" class="btn btn-info" />

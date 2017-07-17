@@ -1,5 +1,5 @@
 ﻿@model Lppa.Data.Tarjeta
-   
+
 
 @{
     ViewBag.Title = "Tarjetas";
@@ -10,28 +10,39 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input id="dniCliente" type="text" class="form-control" name="DNI" placeholder="@ViewBag.Cliente" style="width:200px;">
-    </div>
+    <div class="col-md-6">
+        <div class="panel panel-success">
+            <div class="panel-heading panel-title" style="background-color:#00adff; color:antiquewhite;">@ViewBag.Cliente</div>
+            <div class="panel-body">
 
-    <div class="form-group col-md-4">
-        @{
-            var tipoTarjeta = new List<SelectListItem>()
+               
+                <div class="form-group col-md-7">
+                    @{
+                        var tipoTarjeta = new List<SelectListItem>()
                             {
                                 new SelectListItem() {Text = "Visa", Value = "Visa"},
                                 new SelectListItem() {Text = "American Express", Value = "American Express"},
                                 new SelectListItem() {Text = "MasterCard", Value = "MasterCard"}
                             };
-        }
-        @Html.LabelFor(m => m.Marca)
-        <div class="input-group">
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-credit-card"></span>
-            </span>
-            @Html.DropDownListFor(m => m.Marca, tipoTarjeta, new { @class = "form-control" })
+                    }
+                    @Html.LabelFor(m => m.Marca)
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-credit-card"></span>
+                        </span>
+                        @Html.DropDownListFor(m => m.Marca, tipoTarjeta, new { @class = "form-control" })
+                    </div>
+
+                </div>
+
+
+
+
+                </div>
+            </div>
         </div>
 
-    </div>
-            }
-            
+
+               
+
+                }

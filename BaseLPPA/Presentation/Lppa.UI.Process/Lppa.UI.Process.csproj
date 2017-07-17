@@ -43,6 +43,7 @@
     <Compile Include="ClienteComponentController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioComponentController.cs" />
+    <Compile Include="VerazComponentController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Business\Lppa.Business\Lppa.Business.csproj">

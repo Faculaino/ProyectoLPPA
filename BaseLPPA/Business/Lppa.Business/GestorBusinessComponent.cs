@@ -84,6 +84,8 @@ namespace Lppa.Business
         //}
         #endregion
 
+           
+
         public ClienteEntity AgregarCliente(ClienteEntity cliente)
         {
             //Validar datos del negocio
@@ -114,7 +116,7 @@ namespace Lppa.Business
             return us.ListarTodos();
         }
 
-        public int ValidarVeraz(long NroDoc)
+        public string ValidarVeraz(long NroDoc)
         {
             var us = new VerazRepository();
             return us.ValidarVeraz(NroDoc);

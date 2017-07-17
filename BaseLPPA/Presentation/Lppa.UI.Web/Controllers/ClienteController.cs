@@ -15,7 +15,7 @@ namespace Lppa.UI.Web.Controllers
     public class ClienteController : Controller
     {
         private LppaBD db = new LppaBD();
-
+      
 
         public ActionResult Index()
         {
@@ -23,23 +23,36 @@ namespace Lppa.UI.Web.Controllers
 
         }
 
-        //[HttpGet]
-        //public ActionResult Contrato()
-        //{
-        //    ViewBag.Progress = 3;
-        //    return RedirectToAction("Create");
-        //}
+        [HttpGet]
+        public ActionResult Contrato()
+        {
+            ViewBag.Progress = 3;
+            return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult ValidarVeraz(long dni)
+        {
+            
+            var vp = new VerazComponentController();
+            var resultado = vp.ValidarVeraz(dni);
+
+            ViewBag.Veraz = resultado;
+
+            return RedirectToAction("Index");
+        }
 
         [HttpPost]
         public ActionResult Index(long dni)
         {
+            
 
             var ccc = new ClienteComponentController();
             var nuevoCliente = ccc.BuscarPorDNI(dni);
 
             if (nuevoCliente == null)
             {
-                //return RedirectToAction("Index");
+                
                 return View(new List<Lppa.Data.Cliente>());
 
             }

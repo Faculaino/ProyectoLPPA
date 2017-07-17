@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="GestorBusinessComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VerazBussines.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Data\Lppa.Data\Lppa.Data.csproj">
