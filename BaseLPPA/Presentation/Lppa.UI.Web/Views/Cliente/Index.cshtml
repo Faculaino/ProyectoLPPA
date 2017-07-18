@@ -2,33 +2,39 @@
 
 @{
     ViewBag.Title = "Clientes";
-    
+   
+
 }
+
+<p>@ViewBag.Veraz</p>
 
 <h2 class="ListaClientes">Lista de Clientes</h2>
 @using (Html.BeginForm("Create", "Cliente", FormMethod.Get))
 {
     <button style="float:right;">
-        @Html.ActionLink("Nuevo Cliente", "Create")
+        @Html.ActionLink("Nuevo Cliente", "PasosCliente")
     </button>
 }
 
-@using (Html.BeginForm("ValidarVeraz", "Cliente", FormMethod.Post))
+<button onclick="myFunction()" style="float:right; margin-right:35%;">@ViewBag.Veraz</button>
+
+@using (Html.BeginForm("ValidarVeraz", "Cliente", FormMethod.Post@*, new { dni = ViewBag.ClienteDNI}*@))
 {
-    <button style="margin-right:10%; margin-bottom:10px;">
-        @Html.ActionLink("Validar Veraz", "ValidarVeraz")
-    </button>
-    @*<input id="dniCliente" type="text" class="form-control" name="DNI" placeholder="DNI" style="width:200px;">
-    <input type="submit" value="Validar Veraz"/>*@
+    @*<button style="margin-right:10%; margin-bottom:10px;">
+            @Html.ActionLink("Validar Veraz", "ValidarVeraz")
+        </button>*@
+    <input type="submit" value="Validar Veraz" />
+    <input id="dniCliente" type="text" class="form-control" name="DNI" placeholder="DNI" style="width:200px;">
+    
 }
 
 @using (Html.BeginForm("Index", "Cliente", FormMethod.Post, new { @class = "form" }))
 {   <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
         <input id="dniCliente" type="text" class="form-control" name="DNI" placeholder="DNI" style="width:200px;">
-    
+
     </div>
-   
+
 }
 <br />
 <table class="table">
@@ -95,10 +101,20 @@
                 @Html.DisplayFor(modelItem => item.Ocupacion)
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+                @*@Html.ActionLink("Editar", "Edit", new { id = item.ID })*@
 
             </td>
         </tr>
     }
 
+
+
 </table>
+
+@section Scripts{
+    <script>
+        function myFunction() {
+            alert("@ViewBag.Veraz");
+        }
+    </script>
+}

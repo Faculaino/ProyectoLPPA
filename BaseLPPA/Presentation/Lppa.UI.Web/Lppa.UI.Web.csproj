@@ -194,6 +194,7 @@
     <Compile Include="ViewModels\ContratoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ImagenFinal.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -295,6 +296,7 @@
     <None Include="Resources\Logo GP Baires.jpg" />
     <None Include="Resources\NuevaTarjeta.png" />
     <None Include="Resources\ImageTarjeta.png" />
+    <None Include="Resources\TarjetaAImprimir.JPG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -312,6 +314,7 @@
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\ProgressBar.js" />
+    <Content Include="Scripts\ProgressPrintTarjeta.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
@@ -377,6 +380,8 @@
     <Content Include="Views\Cliente\_TarjetaCliente.cshtml" />
     <Content Include="Views\Cliente\_DatosCliente.cshtml" />
     <Content Include="Views\Cliente\_ContratoCliente.cshtml" />
+    <Content Include="Views\Cliente\_ImprimirTarjeta.cshtml" />
+    <Content Include="Views\Cliente\PasosCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

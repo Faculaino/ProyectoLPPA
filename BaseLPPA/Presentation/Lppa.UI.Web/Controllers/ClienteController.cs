@@ -19,8 +19,14 @@ namespace Lppa.UI.Web.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.Veraz = "Respuesta";
             return View(db.Cliente.ToList());
 
+        }
+
+        public ActionResult PasosCliente()
+        {
+            return View();
         }
 
         [HttpGet]
@@ -33,14 +39,34 @@ namespace Lppa.UI.Web.Controllers
         [HttpPost]
         public ActionResult ValidarVeraz(long dni)
         {
+            if (dni.ToString() == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            else
+            {
+                var vp = new VerazComponentController();
+                var resultado = vp.ValidarVeraz(dni);
+
+                ViewBag.Veraz = resultado;
+
+                return RedirectToAction("Index");
+            }
+
             
-            var vp = new VerazComponentController();
-            var resultado = vp.ValidarVeraz(dni);
-
-            ViewBag.Veraz = resultado;
-
-            return RedirectToAction("Index");
         }
+
+        //[HttpGet]
+        //public ActionResult ValidarVeraz(long dni)
+        //{
+
+        //    var vp = new VerazComponentController();
+        //    var resultado = vp.ValidarVeraz(dni);
+
+        //    ViewBag.Veraz = resultado;
+
+        //    return RedirectToAction("Index");
+        //}
 
         [HttpPost]
         public ActionResult Index(long dni)
@@ -121,7 +147,7 @@ namespace Lppa.UI.Web.Controllers
                 ViewBag.Cliente = cliente.Nombre + " " + cliente.Apellido;
                 ViewBag.ClienteDNI = cliente.DNI;
                 ViewBag.Progress = 2;
-                return View();
+                return RedirectToAction("Index");
 
             }
             else if (ViewBag.Progress == 2)
@@ -224,13 +250,13 @@ namespace Lppa.UI.Web.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 }
