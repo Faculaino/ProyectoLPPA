@@ -15,15 +15,16 @@ namespace Lppa.UI.Web.Controllers
     public class ClienteController : Controller
     {
         private LppaBD db = new LppaBD();
-      
+        public string resultado;
+
 
         public ActionResult Index()
         {
-            ViewBag.Veraz = "Respuesta";
+            ViewBag.Veraz = resultado;
             return View(db.Cliente.ToList());
 
         }
-
+        
         public ActionResult PasosCliente()
         {
             return View();
@@ -46,9 +47,10 @@ namespace Lppa.UI.Web.Controllers
             else
             {
                 var vp = new VerazComponentController();
-                var resultado = vp.ValidarVeraz(dni);
+                resultado = vp.ValidarVeraz(dni);
 
                 ViewBag.Veraz = resultado;
+                ViewBag.DNI = dni;
 
                 return RedirectToAction("Index");
             }
@@ -147,7 +149,7 @@ namespace Lppa.UI.Web.Controllers
                 ViewBag.Cliente = cliente.Nombre + " " + cliente.Apellido;
                 ViewBag.ClienteDNI = cliente.DNI;
                 ViewBag.Progress = 2;
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Cliente", new {dni = cliente.DNI });
 
             }
             else if (ViewBag.Progress == 2)
