@@ -15,16 +15,61 @@ namespace Lppa.UI.Web.Controllers
     public class ClienteController : Controller
     {
         private LppaBD db = new LppaBD();
-        public string resultado;
+        public string resultado { get; set; }
 
+
+        //public ActionResult Index(string result, long dni)
+        //{
+        //    if (dni.ToString() != null)
+        //    {
+        //        var ccc = new ClienteComponentController();
+        //        var nuevoCliente = ccc.BuscarPorDNI(dni);
+        //        var c = new Cliente()
+        //        {
+        //            Nombre = nuevoCliente.Nombre,
+        //            Apellido = nuevoCliente.Apellido,
+        //            DNI = nuevoCliente.DNI,
+        //            Domicilio = nuevoCliente.Domicilio,
+        //            Sexo = nuevoCliente.Sexo,
+        //            Ocupacion = nuevoCliente.Ocupacion,
+        //            FechaNacimiento = nuevoCliente.FechaNacimiento,
+        //            EstadoCivil = nuevoCliente.EstadoCivil,
+        //            Ingreso = nuevoCliente.Ingreso,
+        //            ChangedBy = nuevoCliente.ChangedBy,
+        //            ChangedOn = nuevoCliente.ChangedOn,
+        //            CodEstado = nuevoCliente.CodEstado,
+        //            CreatedBy = nuevoCliente.CreatedBy,
+        //            CreatedOn = nuevoCliente.CreatedOn
+        //        };
+
+
+        //        var lista = new List<Cliente>();
+        //        lista.Add(c);
+
+        //        ViewBag.Veraz = result;
+        //        return View(lista);
+        //    }
+
+        //    if (result == null)
+        //    {
+        //        return View();
+        //    }
+        //    else
+        //    {
+        //        ViewBag.Veraz = resultado;
+        //        return View(db.Cliente.ToList());
+
+        //    }
+
+
+        //}
 
         public ActionResult Index()
         {
             ViewBag.Veraz = resultado;
             return View(db.Cliente.ToList());
-
         }
-        
+
         public ActionResult PasosCliente()
         {
             return View();
@@ -35,6 +80,16 @@ namespace Lppa.UI.Web.Controllers
         {
             ViewBag.Progress = 3;
             return PartialView();
+        }
+
+        public ActionResult ValidarVeraz(string dni)
+        {
+            var vp = new VerazComponentController();
+            resultado = vp.ValidarVeraz(long.Parse(dni));
+
+            ViewBag.Veraz = resultado;
+            ViewBag.DNI = dni;
+            return RedirectToAction("Index", new { result = resultado });
         }
 
         [HttpPost]
@@ -52,7 +107,7 @@ namespace Lppa.UI.Web.Controllers
                 ViewBag.Veraz = resultado;
                 ViewBag.DNI = dni;
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { result = resultado , dni = dni});
             }
 
             
@@ -149,7 +204,7 @@ namespace Lppa.UI.Web.Controllers
                 ViewBag.Cliente = cliente.Nombre + " " + cliente.Apellido;
                 ViewBag.ClienteDNI = cliente.DNI;
                 ViewBag.Progress = 2;
-                return RedirectToAction("Index","Cliente", new {dni = cliente.DNI });
+                return RedirectToAction("Index", new { result = "", dni = cliente.DNI });
 
             }
             else if (ViewBag.Progress == 2)
@@ -252,13 +307,13 @@ namespace Lppa.UI.Web.Controllers
             return RedirectToAction("Index");
         }
 
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }

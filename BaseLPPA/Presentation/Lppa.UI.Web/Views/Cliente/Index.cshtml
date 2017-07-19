@@ -16,7 +16,7 @@
     </button>
 }
 
-<button onclick="myFunction()" style="float:right; margin-right:35%;">@ViewBag.Veraz</button>
+<button onclick="myFunction()" style="float:right; margin-right:35%;">Resultado Veraz</button>
 
 @using (Html.BeginForm("ValidarVeraz", "Cliente", FormMethod.Post@*, new { dni = ViewBag.ClienteDNI}*@))
 {
@@ -110,6 +110,10 @@
 
 
 </table>
+
+<button style="float:right;">
+    @Html.ActionLink("Continuar Solicitud", "PasosCliente")
+</button>
 
 @section Scripts{
     <script>

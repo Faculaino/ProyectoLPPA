@@ -27,7 +27,7 @@ namespace Lppa.Data
 
                 try
                 {
-                    if (dias >= 90)
+                    if (dias >= 1 && dias <= 90)
                     {
                         return resultado = "Tarjeta de $1000";
                     }

@@ -3,7 +3,7 @@
     <link href="~/Content/ProgressFinal.css" rel="stylesheet" />
 </head>
 <body>
-   
+
 
     <div class="container">
         <div class="row">
@@ -43,49 +43,46 @@
                             </li>
                         </ul>
                     </div>
-                    <form role="form">
-                        <div class="tab-content">
-                            <div class="tab-pane active" role="tabpanel" id="step1">
-                                @*<h3>Paso 1</h3>*@
-                                @using (Html.BeginForm("Create", "Cliente", FormMethod.Post))
-                                {
-                                    @Html.AntiForgeryToken()
-                                    @Html.Partial("_DatosCliente")
 
-                                    <input type="submit" class="btn btn-info" value="Guardar"/>
-                                }
+                    <div class="tab-content">
+                        <div class="tab-pane active" role="tabpanel" id="step1">
+                            @using (Html.BeginForm("Create", "Cliente", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.Partial("_DatosCliente")
+
+                                <input type="submit" class="btn btn-info" value="Guardar" />
+                            }
 
 
-                                <ul class="list-inline pull-right">
-                                    <li><button type="button" class="btn btn-primary next-step">Continuar sin Guardar</button></li>
+                            <ul class="list-inline pull-right">
+                                <li><button type="button" class="btn btn-primary next-step">Continuar sin Guardar</button></li>
 
-                                </ul>
+                            </ul>
 
-                            </div>
-                            <div class="tab-pane" role="tabpanel" id="step2">
-                                @*<h3>Step 2</h3>*@
-                                @Html.Partial("_TarjetaCliente")
-                                <ul class="list-inline pull-right">
-                                    <li><button type="button" class="btn btn-default prev-step">Paso Anterior</button></li>
-                                    <li><button type="button" class="btn btn-primary next-step">Guardar y Continuar</button></li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane" role="tabpanel" id="step3">
-                                @*<h3>Step 3</h3>*@
-                                @Html.Partial("_ContratoCliente")
-                                <ul class="list-inline pull-right">
-                                    <li><button type="button" class="btn btn-default prev-step">Paso Anterior</button></li>
-                                    <li><button type="button" class="btn btn-default next-step">Saltar Paso</button></li>
-                                    <li><button type="button" class="btn btn-primary btn-info-full next-step">Guardar y Continuar</button></li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane" role="tabpanel" id="complete">
-                                <h3>¡Listo!</h3>
-                                @Html.Partial("_ImprimirTarjeta")
-                            </div>
-                            <div class="clearfix"></div>
                         </div>
-                    </form>
+                        <div class="tab-pane" role="tabpanel" id="step2">
+                            @Html.Partial("_TarjetaCliente")
+                            <ul class="list-inline pull-right">
+                                <li><button type="button" class="btn btn-default prev-step">Paso Anterior</button></li>
+                                <li><button type="button" class="btn btn-primary next-step">Guardar y Continuar</button></li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" role="tabpanel" id="step3">
+                            @Html.Partial("_ContratoCliente")
+                            <ul class="list-inline pull-right">
+                                <li><button type="button" class="btn btn-default prev-step">Paso Anterior</button></li>
+                                <li><button type="button" class="btn btn-default next-step">Saltar Paso</button></li>
+                                <li><button type="button" class="btn btn-primary btn-info-full next-step">Guardar y Continuar</button></li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" role="tabpanel" id="complete">
+                            <h3>¡Listo!</h3>
+                            @Html.Partial("_ImprimirTarjeta")
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
                 </div>
             </section>
         </div>
