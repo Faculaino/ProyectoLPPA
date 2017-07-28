@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LppaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Banco">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CUIT" Type="bigint" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChangedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bitacora">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaHora" Type="datetime" Nullable="false" />
+    <Property Name="CodUsr" Type="int" Nullable="false" />
+    <Property Name="Evento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Observacion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DNI" Type="bigint" Nullable="false" />
+    <Property Name="Domicilio" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EstadoCivil" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+    <Property Name="Ingreso" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Sexo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Ocupacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CodEstado" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChangedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contrato">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaAlta" Type="date" Nullable="false" />
+    <Property Name="FechaBaja" Type="date" Nullable="false" />
+    <Property Name="IDCliente" Type="int" Nullable="false" />
+    <Property Name="IDTarjeta" Type="int" Nullable="false" />
+    <Property Name="IDUsuario" Type="int" Nullable="false" />
+    <Property Name="CodEstado" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChangedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="CodEstado" />
+    </Key>
+    <Property Name="CodEstado" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Solicitud">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDCliente" Type="int" Nullable="false" />
+    <Property Name="IDTarjeta" Type="int" Nullable="false" />
+    <Property Name="CodEstado" Type="int" Nullable="false" />
+    <Property Name="FotoCliente" Type="image" />
+    <Property Name="FirmaCliente" Type="image" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Celular" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChangedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tarjeta">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDBanco" Type="int" Nullable="false" />
+    <Property Name="IDCliente" Type="int" Nullable="false" />
+    <Property Name="Marca" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaEmision" Type="date" Nullable="false" />
+    <Property Name="FechaVencimiento" Type="int" Nullable="false" />
+    <Property Name="CodVerificacion" Type="int" Nullable="false" />
+    <Property Name="Limite" Type="int" Nullable="false" />
+    <Property Name="CodEstado" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChangedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Contraseña" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FechaAlta" Type="date" Nullable="false" />
+    <Property Name="FechaBaja" Type="date" Nullable="false" />
+    <Property Name="CodEstado" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="ChangedBy" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChangedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Veraz">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DNI" Type="bigint" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FechaIngreso" Type="datetime" />
+    <Property Name="FechaEgreso" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="LppaModelStoreContainer">
+    <EntitySet Name="Banco" EntityType="Self.Banco" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bitacora" EntityType="Self.Bitacora" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contrato" EntityType="Self.Contrato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Solicitud" EntityType="Self.Solicitud" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tarjeta" EntityType="Self.Tarjeta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Veraz" EntityType="Self.Veraz" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

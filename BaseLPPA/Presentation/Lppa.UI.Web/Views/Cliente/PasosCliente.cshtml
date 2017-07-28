@@ -1,0 +1,121 @@
+﻿<html>
+<head>
+    <link href="~/Content/ProgressFinal.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <section>
+                <div class="wizard">
+                    <div class="wizard-inner">
+                        <div class="connecting-line"></div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Datos Personales">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                    </span>
+
+                                </a>
+                            </li>
+                            <li role="presentation" class="disabled">
+                                <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Selección de Tarjeta">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-credit-card"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="disabled">
+                                <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Firma de Contrato">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-picture"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="disabled">
+                                <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Impresión de Tarjeta">
+                                    <span class="round-tab">
+                                        <i class="glyphicon glyphicon-ok"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" role="tabpanel" id="step1">
+                            @using (Html.BeginForm("PasosCliente", "Cliente", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.Partial("_DatosCliente")
+
+                                <input type="submit" class="btn btn-info" value="Guardar" />
+                            }
+
+                            @ViewBag.Respuesta
+
+                            <br />
+                            <br />
+
+                            @if (ViewBag.)
+
+                            @using (Html.BeginForm("ValidarVeraz", "Cliente", FormMethod.Post))
+                            {
+                                <button style="margin-right:10%; margin-bottom:10px;">
+                                    @Html.ActionLink("Validar Veraz", "ValidarVeraz", new { dni = ViewBag.ClienteDNI})
+                                </button>
+
+                            }
+
+
+                            <ul class="list-inline pull-right">
+                                <li><button type="button" class="btn btn-primary next-step">Continuar</button></li>
+
+                            </ul>
+
+                        </div>
+                        <div class="tab-pane" role="tabpanel" id="step2">
+                         
+                            @using (Html.BeginForm("TarjetaCliente", "Tarjeta", FormMethod.Post))
+                            {
+                                @Html.Partial("_TarjetaCliente")
+                                <div style="display:none">
+                                    <input type="text" value="@ViewBag.ClienteDNI" />
+                                </div>
+
+                                <input type="submit" class="btn btn-info" value="Guardar" />
+                            }
+
+                            <ul class="list-inline pull-right">
+                                @*<li><button type="button" class="btn btn-default prev-step">Paso Anterior</button></li>*@
+                                <li><button type="button" class="btn btn-primary next-step">Guardar y Continuar</button></li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" role="tabpanel" id="step3">
+                            @Html.Partial("_ContratoCliente")
+                            <ul class="list-inline pull-right">
+                                <li><button type="button" class="btn btn-default prev-step">Paso Anterior</button></li>
+                                <li><button type="button" class="btn btn-default next-step">Saltar Paso</button></li>
+                                <li><button type="button" class="btn btn-primary btn-info-full next-step">Guardar y Continuar</button></li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" role="tabpanel" id="complete">
+                            <h3>¡Listo!</h3>
+                            @Html.Partial("_ImprimirTarjeta")
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+
+    @section Scripts{
+        <script src="~/Scripts/ProgressPrintTarjeta.js"></script>
+    }
+</body>
+
+</html>

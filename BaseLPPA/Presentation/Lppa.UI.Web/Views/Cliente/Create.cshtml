@@ -1,0 +1,106 @@
+﻿@model Lppa.Data.Cliente
+
+@using Lppa.Entities
+
+
+
+@{
+    ViewBag.Title = "Nuevo Cliente";
+}
+
+
+<html>
+<head>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link href="~/Content/ProgressBar.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <h2 class="NuevoCliente">Nueva Solicitud de Tarjeta</h2>
+
+    <!--ProgressBar-->
+    @Html.Partial("_ProgressBar")
+
+
+    @if (ViewBag.Progress == 1)
+    {
+         <!--Pantalla PRINCIPAL-->
+        <div id="pantalla">
+
+            @using (Html.BeginForm("Create", "Cliente", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.Partial("_DatosCliente")
+
+                <div class="form-group">
+                    <div class="col-md-offset-10 col-md-10">
+                        <input type="submit" value="Siguiente" id="btnSiguiente" class="btn btn-primary" />
+
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else if (ViewBag.Progress == 2)
+    {
+         <!-- Comienzo PANTALLA 2 -->
+        <div id="pantalla2">
+            @using (Html.BeginForm("Create", "Cliente", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.Partial("_TarjetaCliente")
+              
+                <div class="form-group">
+                    <div class="col-md-offset-10 col-md-10">
+                        <input type="submit" value="Siguiente" id="btnSiguiente2" class="btn btn-primary" />
+
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    }
+
+    else if (ViewBag.Progress == 3)
+    {
+         <!-- Comienzo PANTALLA 3 -->
+        <div id="pantalla3">
+            @Html.Partial("_ContratoCliente")
+            <div class="form-group">
+                <div class="col-md-offset-10 col-md-10">
+                    <input type="submit" value="Ir a Paso1" id="btnaPaso2" class="btn btn-info" />
+                    <input type="submit" value="Siguiente" id="btnSiguiente3" class="btn btn-primary" />
+                </div>
+            </div>
+
+
+        </div>
+
+    }
+    else if (ViewBag.Progress == 4)
+    {
+        <!-- Comienzo PANTALLA 4 -->
+        <div id="pantalla4" style="display:none;">
+            <h2>PANTALLA 4</h2>
+            <div class="form-group">
+                <div class="col-md-offset-10 col-md-10">
+                    <input type="submit" value="Ir a Paso1" id="btnaPaso3" class="btn btn-info" />
+                    <input type="submit" value="Siguiente" id="btnFinalizar" class="btn btn-primary" />
+                </div>
+            </div>
+
+
+        </div>
+
+    }
+
+    @section Scripts{
+        <script src="~/Scripts/ProgressBar.js"></script>
+    }
+
+</body>
+
+</html>

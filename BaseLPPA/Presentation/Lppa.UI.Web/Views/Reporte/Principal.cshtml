@@ -1,0 +1,30 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Reportes</title>
+    <link href="~/Content/ViewReports.css" rel="stylesheet" />
+</head>
+<body>
+   
+    <header>
+        <h2 style="margin-top:70px;">Reportes</h2>
+    </header>
+    <nav>
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Lista de Clientes", "ListaClientes", "Reporte")</li>
+            <li>@Html.ActionLink("Clientes con Tarjeta VISA", "ListaClientesVISA", "Reporte")</li>
+            <li>@Html.ActionLink("Clientes con Tarjeta AMEX", "ListaClientesAMEX", "Reporte")</li>
+            <li>@Html.ActionLink("Clientes con Tarjeta MasterCard", "ListaClientesMasterCard", "Reporte")</li>
+            <li>@Html.ActionLink("Clientes en Veraz", "ListaClientesEnVeraz", "Reporte")</li>
+        </ul>
+    </nav>
+   
+    <section style="height:500px; clear:both">
+        <img src="~/Resources/reporte.jpg" style="opacity:0.5; height:500px;"/>
+    </section>
+
+</body>
+</html>

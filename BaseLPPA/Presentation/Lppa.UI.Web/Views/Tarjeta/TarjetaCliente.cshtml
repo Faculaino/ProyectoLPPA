@@ -1,0 +1,67 @@
+﻿@model Lppa.Data.Tarjeta
+
+@{
+    ViewBag.Title = "Tarjetas";
+    
+}
+
+
+<html>
+<head>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link href="~/Content/ProgressBar.css" rel="stylesheet" />
+</head>
+<body>
+    @Html.Partial("_ProgressBar2")
+
+    <h2 >Tipo de Tarjeta</h2>
+    @using (Html.BeginForm("TarjetaCliente", "Tarjeta", FormMethod.Post, new { tarjeta = Model, dni = ViewBag.ClienteDNI }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="col-md-6">
+            <div class="panel panel-success">
+                <div class="panel-heading panel-title" style="background-color:#00adff; color:antiquewhite;">@ViewBag.Cliente - DNI: @ViewBag.ClienteDNI</div>
+                <div class="panel-body">
+
+                    <div class="form-group col-md-7">
+                        @{
+                            var tipoTarjeta = new List<SelectListItem>()
+                            {
+                                new SelectListItem() {Text = "Visa", Value = "Visa"},
+                                new SelectListItem() {Text = "American Express", Value = "American Express"},
+                                new SelectListItem() {Text = "MasterCard", Value = "MasterCard"}
+                            };
+                        }
+                        @Html.LabelFor(m => m.Marca)
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-credit-card"></span>
+                            </span>
+                            @Html.DropDownListFor(m => m.Marca, tipoTarjeta, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        
+
+        <input type="hidden" value=@ViewBag.ClienteDNI name="dni" />
+            
+        <input type="submit" value="Guardar" class="btn btn-primary" />
+
+
+                            }
+
+
+    <div class="form-group">
+        <div class="col-md-offset-10 col-md-10">
+            @Html.ActionLink("Continuar", "SolicitudCliente", "Solicitud", new {cliente = ViewBag.Cliente, dni = ViewBag.ClienteDNI }, null)
+        </div>
+    </div>
+
+
+</body>
+</html>

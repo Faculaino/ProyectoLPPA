@@ -1,0 +1,34 @@
+﻿<html>
+<head>
+    <title>Barra de progreso en Botstrap</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link href="~/Content/ImagenFinal.css" rel="stylesheet" />
+</head>
+<body>
+
+    @Html.Partial("_ProgressBar4")
+
+    <h2>¡Listo!</h2>
+
+    <div id="imagen" style="float:left;">
+        <img src="~/Resources/TarjetaAImprimir.JPG" />
+        <div>@ViewBag.Cliente</div>
+    </div>
+    <div style="float:right; opacity:0.5; height:300px;">
+
+        <img src="~/Resources/HombreTarjeta.JPG" />
+       
+    </div>
+    
+    <form style="float:right;">
+        <input type='button' onclick="printDiv('imagen');" value='Imprimir' class="btn btn-info" />
+    </form>
+
+    @section Scripts{
+        <script src="~/Scripts/ProgressPrintTarjeta.js"></script>
+        <script src="~/Scripts/ImpresionFinal.js"></script>
+    }
+</body>
+</html>
