@@ -65,6 +65,7 @@
     <Compile Include="Contrato.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="CuentaRepository.cs" />
     <Compile Include="Estado.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

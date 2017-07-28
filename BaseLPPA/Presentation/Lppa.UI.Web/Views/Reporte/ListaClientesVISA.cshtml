@@ -1,49 +1,45 @@
-﻿@model IEnumerable<Lppa.Data.Tarjeta>
+﻿@model IEnumerable<Lppa.UI.Web.ViewModels.ClientesVisa>
 
 
 
-    <meta name="viewport" content="width=device-width" />
-    <title>ListaClientesVISA</title>
+<meta name="viewport" content="width=device-width" />
+<title>ListaClientesVISA</title>
 
 <h2 style="margin-top:70px;">Lista de Clientes con Tarjeta de Crédito VISA</h2>
 
-    <p>
-        @Html.ActionLink("Atras", "Principal")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.IDBanco)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IDCliente)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Marca)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaEmision)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaVencimiento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Limite)
-            </th>
+<p>
+    @Html.ActionLink("Atras", "Principal")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MarcaTarjeta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaEmision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaVencimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Limite)
+        </th>
 
-        </tr>
-    
-    @foreach (var item in Model) {
+    </tr>
+
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IDBanco)
+                @Html.DisplayFor(modelItem => item.Nombre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IDCliente)
+                @Html.DisplayFor(modelItem => item.MarcaTarjeta)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Marca)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.FechaEmision)
             </td>
@@ -53,9 +49,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Limite)
             </td>
-          
-           
+
+
         </tr>
     }
-    
-    </table>
+
+</table>

@@ -23,32 +23,90 @@ namespace Lppa.UI.Web.Controllers
 
         public ActionResult ListaClientesVISA()
         {
-            var lista = new List<Tarjeta>();
-            var listaFound = new TarjetaRepository();
+            try
+            {
+                var lista = (from a in db.Tarjeta join c in db.Cliente on a.IDCliente equals c.ID where a.Marca == "Visa" select new { c.Nombre, a.Marca, a.FechaEmision, a.FechaVencimiento, a.Limite }).ToList();
+                var nuevaLista = new List<ViewModels.ClientesVisa>();
 
-            lista = listaFound.listaTcVISA();
+                foreach (var item in lista)
+                {
+                    var c = new ViewModels.ClientesVisa()
+                    {
+                        Nombre = item.Nombre,
+                        MarcaTarjeta = item.Marca,
+                        FechaEmision = item.FechaEmision,
+                        FechaVencimiento = item.FechaVencimiento,
+                        Limite = item.Limite
+                    };
 
-            return View(lista);
+                    nuevaLista.Add(c);
+                }
+
+                return View(nuevaLista);
+            }
+            catch
+            {
+                return RedirectToAction("Principal");
+            }
+           
         }
 
         public ActionResult ListaClientesAMEX()
         {
-            var lista = new List<Tarjeta>();
-            var listaFound = new TarjetaRepository();
+            try
+            {
+                var lista = (from a in db.Tarjeta join c in db.Cliente on a.IDCliente equals c.ID where a.Marca == "American Express" select new { c.Nombre, a.Marca, a.FechaEmision, a.FechaVencimiento, a.Limite }).ToList();
+                var nuevaLista = new List<ViewModels.ClientesAMEX>();
 
-            lista = listaFound.listaTcAMEX();
+                foreach (var item in lista)
+                {
+                    var c = new ViewModels.ClientesAMEX()
+                    {
+                        Nombre = item.Nombre,
+                        MarcaTarjeta = item.Marca,
+                        FechaEmision = item.FechaEmision,
+                        FechaVencimiento = item.FechaVencimiento,
+                        Limite = item.Limite
+                    };
 
-            return View(lista);
+                    nuevaLista.Add(c);
+                }
+
+                return View(nuevaLista);
+            }
+            catch
+            {
+                return RedirectToAction("Principal");
+            }
         }
 
         public ActionResult ListaClientesMasterCard()
         {
-            var lista = new List<Tarjeta>();
-            var listaFound = new TarjetaRepository();
+            try
+            {
+                var lista = (from a in db.Tarjeta join c in db.Cliente on a.IDCliente equals c.ID where a.Marca == "MasterCard" select new { c.Nombre, a.Marca, a.FechaEmision, a.FechaVencimiento, a.Limite }).ToList();
+                var nuevaLista = new List<ViewModels.ClientesMaster>();
 
-            lista = listaFound.listaTcMaster();
+                foreach (var item in lista)
+                {
+                    var c = new ViewModels.ClientesMaster()
+                    {
+                        Nombre = item.Nombre,
+                        MarcaTarjeta = item.Marca,
+                        FechaEmision = item.FechaEmision,
+                        FechaVencimiento = item.FechaVencimiento,
+                        Limite = item.Limite
+                    };
 
-            return View(lista);
+                    nuevaLista.Add(c);
+                }
+
+                return View(nuevaLista);
+            }
+            catch
+            {
+                return RedirectToAction("Principal");
+            }
         }
 
         public ActionResult ListaClientesEnVeraz()

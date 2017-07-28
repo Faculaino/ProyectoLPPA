@@ -192,6 +192,9 @@
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BancoViewModel.cs" />
+    <Compile Include="ViewModels\ClientesAMEX.cs" />
+    <Compile Include="ViewModels\ClientesMaster.cs" />
+    <Compile Include="ViewModels\ClientesVisa.cs" />
     <Compile Include="ViewModels\ClienteViewModel.cs" />
     <Compile Include="ViewModels\ContratoViewModel.cs" />
   </ItemGroup>
@@ -406,6 +409,7 @@
     <Content Include="Views\Reporte\ListaClientesAMEX.cshtml" />
     <Content Include="Views\Reporte\ListaClientesMasterCard.cshtml" />
     <Content Include="Views\Reporte\ListaClientesEnVeraz.cshtml" />
+    <Content Include="Views\Account\Registrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

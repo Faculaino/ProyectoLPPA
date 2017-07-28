@@ -1,25 +1,23 @@
-﻿@model IEnumerable<Lppa.Data.Tarjeta>
+﻿@model IEnumerable<Lppa.UI.Web.ViewModels.ClientesAMEX>
 
 
 
 <meta name="viewport" content="width=device-width" />
-<title>ListaClientesAMEX</title>
+<title>ListaClientesVISA</title>
 
 <h2 style="margin-top:70px;">Lista de Clientes con Tarjeta de Crédito American Express</h2>
 
 <p>
     @Html.ActionLink("Atras", "Principal")
 </p>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.IDBanco)
+            @Html.DisplayNameFor(model => model.Nombre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.IDCliente)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Marca)
+            @Html.DisplayNameFor(model => model.MarcaTarjeta)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FechaEmision)
@@ -37,14 +35,12 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IDBanco)
+                @Html.DisplayFor(modelItem => item.Nombre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IDCliente)
+                @Html.DisplayFor(modelItem => item.MarcaTarjeta)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Marca)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.FechaEmision)
             </td>
