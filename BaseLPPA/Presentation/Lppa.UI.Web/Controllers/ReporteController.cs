@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Lppa.UI.Web.Controllers
 {
+   
     public class ReporteController : Controller
     {
         private LppaBD db = new LppaBD();

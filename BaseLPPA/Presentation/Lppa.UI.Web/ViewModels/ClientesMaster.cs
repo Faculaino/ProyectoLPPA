@@ -10,7 +10,7 @@ namespace Lppa.UI.Web.ViewModels
         public string Nombre { get; set; }
         public string MarcaTarjeta { get; set; }
         public DateTime FechaEmision { get; set; }
-        public int FechaVencimiento { get; set; }
+        public DateTime FechaVencimiento { get; set; }
         public int Limite { get; set; }
     }
 }

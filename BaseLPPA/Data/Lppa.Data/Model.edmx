@@ -97,7 +97,7 @@
           <Property Name="IDCliente" Type="int" Nullable="false" />
           <Property Name="Marca" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="FechaEmision" Type="date" Nullable="false" />
-          <Property Name="FechaVencimiento" Type="int" Nullable="false" />
+          <Property Name="FechaVencimiento" Type="date" Nullable="false" />
           <Property Name="CodVerificacion" Type="int" Nullable="false" />
           <Property Name="Limite" Type="int" Nullable="false" />
           <Property Name="CodEstado" Type="int" Nullable="false" />
@@ -229,8 +229,8 @@
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
           <EntitySet Name="Veraz" EntityType="Self.Veraz" />
           <EntitySet Name="Cliente" EntityType="LppaModel.Cliente" />
-          <EntitySet Name="Tarjeta" EntityType="LppaModel.Tarjeta" />
           <EntitySet Name="Solicitud" EntityType="LppaModel.Solicitud" />
+          <EntitySet Name="Tarjeta" EntityType="LppaModel.Tarjeta" />
         </EntityContainer>
         <EntityType Name="Cliente">
           <Key>
@@ -252,24 +252,6 @@
           <Property Name="ChangedBy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="ChangedOn" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
-        <EntityType Name="Tarjeta">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDBanco" Type="Int32" Nullable="false" />
-          <Property Name="IDCliente" Type="Int32" Nullable="false" />
-          <Property Name="Marca" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="FechaEmision" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="FechaVencimiento" Type="Int32" Nullable="false" />
-          <Property Name="CodVerificacion" Type="Int32" Nullable="false" />
-          <Property Name="Limite" Type="Int32" Nullable="false" />
-          <Property Name="CodEstado" Type="Int32" Nullable="false" />
-          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ChangedBy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ChangedOn" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
         <EntityType Name="Solicitud">
           <Key>
             <PropertyRef Name="ID" />
@@ -282,6 +264,24 @@
           <Property Name="FirmaCliente" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Celular" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ChangedBy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ChangedOn" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Tarjeta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDBanco" Type="Int32" Nullable="false" />
+          <Property Name="IDCliente" Type="Int32" Nullable="false" />
+          <Property Name="Marca" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaEmision" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaVencimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CodVerificacion" Type="Int32" Nullable="false" />
+          <Property Name="Limite" Type="Int32" Nullable="false" />
+          <Property Name="CodEstado" Type="Int32" Nullable="false" />
           <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ChangedBy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -393,6 +393,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Solicitud">
+            <EntityTypeMapping TypeName="LppaModel.Solicitud">
+              <MappingFragment StoreEntitySet="Solicitud">
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FirmaCliente" ColumnName="FirmaCliente" />
+                <ScalarProperty Name="FotoCliente" ColumnName="FotoCliente" />
+                <ScalarProperty Name="CodEstado" ColumnName="CodEstado" />
+                <ScalarProperty Name="IDTarjeta" ColumnName="IDTarjeta" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Tarjeta">
             <EntityTypeMapping TypeName="LppaModel.Tarjeta">
               <MappingFragment StoreEntitySet="Tarjeta">
@@ -408,24 +426,6 @@
                 <ScalarProperty Name="Marca" ColumnName="Marca" />
                 <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
                 <ScalarProperty Name="IDBanco" ColumnName="IDBanco" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Solicitud">
-            <EntityTypeMapping TypeName="LppaModel.Solicitud">
-              <MappingFragment StoreEntitySet="Solicitud">
-                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
-                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="Celular" ColumnName="Celular" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="FirmaCliente" ColumnName="FirmaCliente" />
-                <ScalarProperty Name="FotoCliente" ColumnName="FotoCliente" />
-                <ScalarProperty Name="CodEstado" ColumnName="CodEstado" />
-                <ScalarProperty Name="IDTarjeta" ColumnName="IDTarjeta" />
-                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

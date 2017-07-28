@@ -9,25 +9,9 @@
 <p>@ViewBag.Veraz</p>
 
 <h2 class="ListaClientes">Lista de Clientes</h2>
-@*@using (Html.BeginForm("PasosCliente", "Cliente", FormMethod.Get))
-{
-    <button style="float:right;">
-        @Html.ActionLink("Nuevo Cliente", "PasosCliente")
-    </button>
-}*@
-
-@*<button onclick="myFunction()" style="float:right; margin-right:35%;">Resultado Veraz</button>*@
-
-@*
-    @using (Html.BeginForm("ValidarVeraz", "Cliente", FormMethod.Post))
-    {
-        <button style="margin-right:10%; margin-bottom:10px;">
-                    @Html.ActionLink("Validar Veraz", "ValidarVeraz")
-                </button>
-            <input type="submit" value="Validar Veraz" placeholder="@ViewBag.DNI"/>
-            <input id="dniCliente" type="text" class="form-control" name="DNI" placeholder="DNI" style="width:200px;">
-
-        }*@
+<p>
+    @Html.ActionLink("Atras", "Principal","Reporte")
+</p>
 
 @using (Html.BeginForm("Index", "Cliente", FormMethod.Post, new { @class = "form" }))
 {   <div class="input-group">

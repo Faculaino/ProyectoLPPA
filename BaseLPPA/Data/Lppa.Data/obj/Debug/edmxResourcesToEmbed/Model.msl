@@ -101,6 +101,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Solicitud">
+      <EntityTypeMapping TypeName="LppaModel.Solicitud">
+        <MappingFragment StoreEntitySet="Solicitud">
+          <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+          <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FirmaCliente" ColumnName="FirmaCliente" />
+          <ScalarProperty Name="FotoCliente" ColumnName="FotoCliente" />
+          <ScalarProperty Name="CodEstado" ColumnName="CodEstado" />
+          <ScalarProperty Name="IDTarjeta" ColumnName="IDTarjeta" />
+          <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Tarjeta">
       <EntityTypeMapping TypeName="LppaModel.Tarjeta">
         <MappingFragment StoreEntitySet="Tarjeta">
@@ -116,24 +134,6 @@
           <ScalarProperty Name="Marca" ColumnName="Marca" />
           <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
           <ScalarProperty Name="IDBanco" ColumnName="IDBanco" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Solicitud">
-      <EntityTypeMapping TypeName="LppaModel.Solicitud">
-        <MappingFragment StoreEntitySet="Solicitud">
-          <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
-          <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="Celular" ColumnName="Celular" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="FirmaCliente" ColumnName="FirmaCliente" />
-          <ScalarProperty Name="FotoCliente" ColumnName="FotoCliente" />
-          <ScalarProperty Name="CodEstado" ColumnName="CodEstado" />
-          <ScalarProperty Name="IDTarjeta" ColumnName="IDTarjeta" />
-          <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -46,9 +46,9 @@ public partial class LppaBD : DbContext
 
     public virtual DbSet<Cliente> Cliente { get; set; }
 
-    public virtual DbSet<Tarjeta> Tarjeta { get; set; }
-
     public virtual DbSet<Solicitud> Solicitud { get; set; }
+
+    public virtual DbSet<Tarjeta> Tarjeta { get; set; }
 
 }
 

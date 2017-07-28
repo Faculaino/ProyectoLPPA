@@ -35,7 +35,7 @@ namespace Lppa.Data
 
                 t.IDBanco = 1;
                 t.Limite = int.Parse(valorSplit[1]);
-                t.FechaVencimiento = 2;
+                t.FechaVencimiento = DateTime.Now;
                 t.FechaEmision = DateTime.Now;
                 t.CodVerificacion = 123;
                 t.Marca = tarjeta.Marca;

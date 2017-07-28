@@ -28,7 +28,7 @@ public partial class Tarjeta
 
     public System.DateTime FechaEmision { get; set; }
 
-    public int FechaVencimiento { get; set; }
+    public System.DateTime FechaVencimiento { get; set; }
 
     public int CodVerificacion { get; set; }
 

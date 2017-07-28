@@ -92,7 +92,7 @@
     <Property Name="IDCliente" Type="int" Nullable="false" />
     <Property Name="Marca" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="FechaEmision" Type="date" Nullable="false" />
-    <Property Name="FechaVencimiento" Type="int" Nullable="false" />
+    <Property Name="FechaVencimiento" Type="date" Nullable="false" />
     <Property Name="CodVerificacion" Type="int" Nullable="false" />
     <Property Name="Limite" Type="int" Nullable="false" />
     <Property Name="CodEstado" Type="int" Nullable="false" />
